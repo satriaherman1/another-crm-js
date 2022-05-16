@@ -1,0 +1,23 @@
+.sidebar {
+  ul {
+    li {
+      position: relative;
+      @apply pl-6;
+      &.navlist-active {
+        background-color: rgba(14, 200, 206, 0.1);
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 4px;
+          height: 60%;
+          border-radius: 0 20px 20px 0;
+          @apply bg-crm-primary;
+        }
+        @apply text-crm-primary;
+      }
+    }
+  }
+}

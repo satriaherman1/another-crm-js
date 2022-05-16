@@ -1,0 +1,17 @@
+$inputPrimary: #0ec8ce;
+
+.crm-textarea {
+  background-color: transparent;
+
+  height: fit-content;
+  outline: none;
+  border: 1.2px solid rgba(255, 255, 255, 0.72);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.72);
+
+  transition: 0.3s;
+
+  &:focus {
+    border: 2px solid $inputPrimary;
+  }
+}

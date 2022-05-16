@@ -1,0 +1,45 @@
+.crm-dropdown {
+  select {
+    @apply bg-transparent rounded-md w-full py-2 text-white;
+    outline: none;
+    background-image: url("/src/assets/icons/dashboard/arrow-down.svg");
+    background-position: 97% center;
+    background-repeat: no-repeat;
+
+    &.crm-dropdown-outlined {
+      border: 1px solid rgba(255, 255, 255, 0.72);
+    }
+
+    option {
+      display: none;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+  ul {
+    width: 100%;
+    z-index: 60;
+
+    li {
+      padding: 15px 12px;
+      cursor: pointer;
+      border-top: 1px solid #434343;
+      @apply bg-crm-gray-400;
+
+      &:hover {
+        @apply bg-crm-gray-300;
+      }
+
+      &:first-child {
+        border: none;
+        border-radius: 6px 6px 0 0;
+      }
+      &:last-child {
+        border-radius: 0 0 6px 6px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

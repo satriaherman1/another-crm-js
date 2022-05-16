@@ -1,0 +1,16 @@
+$inputPrimary: #0ec8ce;
+
+.crm-mini-input {
+  height: fit-content;
+  outline: none;
+  border-radius: 8px;
+  transition: 0.3s;
+
+  &.crm-mini-input-gray {
+    @apply bg-crm-gray-200 border border-crm-gray-300 text-crm-mutted-blue;
+  }
+
+  &:focus {
+    @apply border-crm-mutted-blue;
+  }
+}

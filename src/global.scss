@@ -1,0 +1,32 @@
+@import "./utility/styles/font.scss";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Axiforma", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+button {
+  font-family: "Product-Sans";
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  line-height: 200%;
+}
+
+.txt-crm-primary {
+  @apply text-crm-primary;
+}

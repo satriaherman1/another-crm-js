@@ -1,0 +1,48 @@
+.crm-datatable {
+  border-radius: 10px 10px 0 0;
+  font-family: "Axiforma", sans-serif;
+
+  .sc-hKMtZM {
+    padding: 20px;
+  }
+
+  .rdt_TableHead {
+    .rdt_TableHeadRow {
+      background-color: #1e1f25;
+      color: white;
+    }
+  }
+
+  .rdt_TableBody {
+    .rdt_TableRow {
+      color: white;
+
+      .sc-hKMtZM {
+        color: #757b8c;
+      }
+      &:nth-child(odd) {
+        background-color: #282c38;
+      }
+
+      &:nth-child(even) {
+        background-color: #1e1f25;
+      }
+    }
+  }
+
+  .sc-iIPllB {
+    background-color: #1e1f25;
+    color: white;
+
+    .sc-ezWOiH {
+      color: white;
+    }
+
+    .bvxQGL {
+      fill: white;
+      &:disabled {
+        fill: rgb(88, 88, 88);
+      }
+    }
+  }
+}

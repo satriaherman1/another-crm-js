@@ -1,0 +1,56 @@
+$inputPrimary: #0ec8ce;
+
+.crm-input-with-select {
+  & > input {
+    height: fit-content;
+    outline: none;
+    border-radius: 8px 0 0 8px;
+    transition: 0.3s;
+
+    @apply bg-crm-gray-200 border border-crm-gray-300 border-r-0 text-crm-mutted-blue;
+
+    &:focus {
+      @apply border-crm-mutted-blue;
+    }
+
+    &:focus ~ div select {
+      @apply border-crm-mutted-blue;
+    }
+  }
+  .crm-input-with-select-dropdown {
+    height: 42px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    box-sizing: border-box;
+    @apply bg-crm-gray-200 border border-crm-gray-300 border-l-0 text-white;
+
+    option {
+      display: none;
+    }
+  }
+
+  ul {
+    width: 100%;
+    z-index: 60;
+
+    li {
+      padding: 10px 12px;
+      cursor: pointer;
+      border-top: 1px solid #434343;
+      @apply bg-crm-gray-400;
+
+      &:hover {
+        @apply bg-crm-gray-300;
+      }
+
+      &:first-child {
+        border: none;
+        border-radius: 6px 6px 0 0;
+      }
+      &:last-child {
+        border-radius: 0 0 6px 6px;
+      }
+    }
+  }
+}

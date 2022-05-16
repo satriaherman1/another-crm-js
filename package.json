@@ -3,17 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.4.3",
+    "@faker-js/faker": "^6.2.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "chart.js": "^3.7.1",
+    "express": "^4.17.3",
+    "faker": "^6.6.6",
+    "fs": "0.0.1-security",
+    "moment": "^2.29.3",
+    "node-sass": "^7.0.1",
     "react": "^18.1.0",
+    "react-chartjs-2": "^4.1.0",
+    "react-data-table-component": "^7.5.0",
     "react-dom": "^18.1.0",
+    "react-otp-input": "^2.4.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "react-app-rewired": "^2.2.1",
+    "sass": "^1.50.1",
+    "windicss": "^3.5.1",
+    "windicss-webpack-plugin": "^1.7.2"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "craco start",
+    "build": "craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
