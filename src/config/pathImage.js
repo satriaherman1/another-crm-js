@@ -10,5 +10,8 @@ import VisaLogo from "@src/assets/img/order-summary/visa.png";
 import MasterCardLogo from "@src/assets/img/order-summary/master-card.png";
 import AmericanExpressLogo from "@src/assets/img/order-summary/american-express.png";
 import SearchIcon from "@src/assets/icons/dashboard/search.svg";
+import MobileIcon from "@src/assets/icons/dashboard/mobile.svg";
 
-export { SignInBanner, MessageQuestionIcon, LogoFull, LogoFullWhite, LockIcon, MailIcon, UserIcon, StarIcon, VisaLogo, MasterCardLogo, AmericanExpressLogo, SearchIcon };
+export default LogoFull;
+
+export { SignInBanner, MessageQuestionIcon, LogoFull, LogoFullWhite, LockIcon, MailIcon, UserIcon, StarIcon, VisaLogo, MasterCardLogo, AmericanExpressLogo, SearchIcon, MobileIcon };

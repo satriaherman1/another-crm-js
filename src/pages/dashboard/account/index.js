@@ -93,10 +93,10 @@ export default function Account() {
         },
     ];
     return (<DashboardLayout>
-      <div className="flex lg:gap-x-2 lg:justify-between lg:gap-0 order-1 flex-wrap mt-6 ">
-        <div className="flex flex-col lg:max-w-[270px]">
-          <div className="bg-crm-dark-300 px-8 py-5 text-white rounded-md">Hello Everyone Im Siri !</div>
-          <div className="bg-crm-dark-300 px-8 py-5 text-white rounded-md mt-4">
+      <div className="flex lg:gap-x-2 lg:justify-between lg:gap-0 order-1 flex-wrap lg:flex-nowrap mt-6 ">
+        <div className="flex flex-wrap lg:basis-[25%]">
+          <div className="bg-crm-dark-300 px-8 py-5 text-white rounded-md w-full">Hello Everyone Im Siri !</div>
+          <div className="bg-crm-dark-300 px-8 py-5 text-white rounded-md mt-4 w-full">
             New Task
             <br />
             {newTaskData.map((t) => (<div className="mt-2 border-b border-crm-gray-200 py-3">
@@ -106,7 +106,7 @@ export default function Account() {
           </div>
         </div>
 
-        <div className="flex flex-col order-last lg:order-2 lg:max-w-[580px]">
+        <div className="flex flex-col order-last lg:order-2 lg:basis-[50%] overflow-hidden">
           <div className="flex justify-between items-center mt-5 lg:mt-0">
             <MiniInput type="text" variant="crm-gray" placeholder="Search by name or email" icon={SearchIcon} className="max-w-[300px] mb-4"/>
           </div>
@@ -125,7 +125,7 @@ export default function Account() {
           </div>
         </div>
 
-        <div className="min-w-[250px] w-full md:w-[fit-content] lg:order-last text-white">
+        <div className="min-w-[250px] w-full md:w-[fit-content] lg:order-last text-white lg:basis-[25%]">
           <div className="w-[fit-content] lg:ml-auto mt-5 md:mt-0">
             <Button variant="primary" className="h-[fit-content]" paddingClassName="p-2">
               <AddIcon />

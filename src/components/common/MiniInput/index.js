@@ -18,6 +18,9 @@ export default function MiniInput(props) {
         case "crm-primary":
             crmVariantClass = "crm-mini-input-primary";
             break;
+        case "crm-transparent":
+            crmVariantClass = "crm-mini-input-transparent";
+            break;
     }
     const inputStyles = {
         backgroundImage: `url(${icon})`,

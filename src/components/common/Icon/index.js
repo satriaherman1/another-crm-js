@@ -27,9 +27,9 @@ export function CallIcon(props) {
 export function UserProfileIcon(props) {
     const { className, fill, width, height } = props;
     return (<svg className={className !== null && className !== void 0 ? className : ""} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18.1399 21.62C17.2599 21.88 16.2199 22 14.9999 22H8.99986C7.77986 22 6.73986 21.88 5.85986 21.62C6.07986 19.02 8.74986 16.97 11.9999 16.97C15.2499 16.97 17.9199 19.02 18.1399 21.62Z" stroke={fill ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M15 2H9C4 2 2 4 2 9V15C2 18.78 3.14 20.85 5.86 21.62C6.08 19.02 8.75 16.97 12 16.97C15.25 16.97 17.92 19.02 18.14 21.62C20.86 20.85 22 18.78 22 15V9C22 4 20 2 15 2ZM12 14.17C10.02 14.17 8.42 12.56 8.42 10.58C8.42 8.60002 10.02 7 12 7C13.98 7 15.58 8.60002 15.58 10.58C15.58 12.56 13.98 14.17 12 14.17Z" stroke={fill ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M15.5799 10.58C15.5799 12.56 13.9799 14.17 11.9999 14.17C10.0199 14.17 8.41992 12.56 8.41992 10.58C8.41992 8.60002 10.0199 7 11.9999 7C13.9799 7 15.5799 8.60002 15.5799 10.58Z" stroke={fill ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M18.1399 21.62C17.2599 21.88 16.2199 22 14.9999 22H8.99986C7.77986 22 6.73986 21.88 5.85986 21.62C6.07986 19.02 8.74986 16.97 11.9999 16.97C15.2499 16.97 17.9199 19.02 18.1399 21.62Z" stroke={fill ? fill : "#98A5CD"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M15 2H9C4 2 2 4 2 9V15C2 18.78 3.14 20.85 5.86 21.62C6.08 19.02 8.75 16.97 12 16.97C15.25 16.97 17.92 19.02 18.14 21.62C20.86 20.85 22 18.78 22 15V9C22 4 20 2 15 2ZM12 14.17C10.02 14.17 8.42 12.56 8.42 10.58C8.42 8.60002 10.02 7 12 7C13.98 7 15.58 8.60002 15.58 10.58C15.58 12.56 13.98 14.17 12 14.17Z" stroke={fill ? fill : "#98A5CD"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M15.5799 10.58C15.5799 12.56 13.9799 14.17 11.9999 14.17C10.0199 14.17 8.41992 12.56 8.41992 10.58C8.41992 8.60002 10.0199 7 11.9999 7C13.9799 7 15.5799 8.60002 15.5799 10.58Z" stroke={fill ? fill : "#98A5CD"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>);
 }
 export function UserGroupIcon(props) {
@@ -163,7 +163,7 @@ export function FilterIcon(props) {
 export function EyeIcon(props) {
     const { className, fill, width, height } = props;
     return (<svg className={className !== null && className !== void 0 ? className : ""} width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M22.4089 9.15C19.9808 5.52 16.4281 3.43 12.6862 3.43C10.8153 3.43 8.9969 3.95 7.33617 4.92C5.67544 5.9 4.18288 7.33 2.96361 9.15C1.91252 10.72 1.91252 13.27 2.96361 14.84C5.39164 18.48 8.94434 20.56 12.6862 20.56C14.5572 20.56 16.3756 20.04 18.0363 19.07C19.697 18.09 21.1896 16.66 22.4089 14.84C23.46 13.28 23.46 10.72 22.4089 9.15ZM12.6862 16.04C10.3318 16.04 8.43982 14.23 8.43982 12C8.43982 9.77 10.3318 7.96 12.6862 7.96C15.0407 7.96 16.9327 9.77 16.9327 12C16.9327 14.23 15.0407 16.04 12.6862 16.04Z" fill={fill ? fill : "#0EC8CE"}/>
+      <path d="M22.4089 9.15C19.9808 5.52 16.4281 3.43 12.6862 3.43C10.8153 3.43 8.9969 3.95 7.33617 4.92C5.67544 5.9 4.18288 7.33 2.96361 9.15C1.91252 10.72 1.91252 13.27 2.96361 14.84C5.39164 18.48 8.94434 20.56 12.6862 20.56C14.5572 20.56 16.3756 20.04 18.0363 19.07C19.697 18.09 21.1896 16.66 22.4089 14.84C23.46 13.28 23.46 10.72 22.4089 9.15ZM12.6862 16.04C10.3318 16.04 8.43982 14.23 8.43982 12C8.43982 9.77 10.3318 7.96 12.6862 7.96C15.0407 7.96 16.9327 9.77 16.9327 12C16.9327 14.23 15.0407 16.04 12.6862 16.04Z" fill={fill !== null && fill !== void 0 ? fill : "#0EC8CE"}/>
       <path d="M12.6865 9.14C11.0363 9.14 9.69092 10.42 9.69092 12C9.69092 13.57 11.0363 14.85 12.6865 14.85C14.3368 14.85 15.6927 13.57 15.6927 12C15.6927 10.43 14.3368 9.14 12.6865 9.14Z" fill={fill ? fill : "#0EC8CE"}/>
     </svg>);
 }
@@ -199,8 +199,8 @@ export function VideoCircleIcon(props) {
 export function SearchIcon(props) {
     const { className, fill, width, height } = props;
     return (<svg className={className !== null && className !== void 0 ? className : ""} width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="7.82492" cy="7.82492" r="6.74142" stroke={fill ? fill : "#3C4254"} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M12.5137 12.8638L15.1567 15.4999" stroke={fill ? fill : "#3C4254"} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="7.82492" cy="7.82492" r="6.74142" stroke={fill ? fill : "#3C4254"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12.5137 12.8638L15.1567 15.4999" stroke={fill ? fill : "#3C4254"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>);
 }
 export function ArrowDown(props) {
@@ -283,15 +283,107 @@ export function LinkedinFilledIcon(props) {
 export function NotificationBing(props) {
     const { className, fill, width, height } = props;
     return (<svg className={className !== null && className !== void 0 ? className : ""} width={width ? width : "24"} height={height ? height : "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 6.43994V9.76994" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-      <path d="M12.0199 2C8.3399 2 5.3599 4.98 5.3599 8.66V10.76C5.3599 11.44 5.0799 12.46 4.7299 13.04L3.4599 15.16C2.6799 16.47 3.2199 17.93 4.6599 18.41C9.4399 20 14.6099 20 19.3899 18.41C20.7399 17.96 21.3199 16.38 20.5899 15.16L19.3199 13.04C18.9699 12.46 18.6899 11.43 18.6899 10.76V8.66C18.6799 5 15.6799 2 12.0199 2Z" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-      <path d="M15.3299 18.8199C15.3299 20.6499 13.8299 22.1499 11.9999 22.1499C11.0899 22.1499 10.2499 21.7699 9.64992 21.1699C9.04992 20.5699 8.66992 19.7299 8.66992 18.8199" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10"/>
+      <path d="M12 6.43994V9.76994" stroke={fill ? fill : "white"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round"/>
+      <path d="M12.0199 2C8.3399 2 5.3599 4.98 5.3599 8.66V10.76C5.3599 11.44 5.0799 12.46 4.7299 13.04L3.4599 15.16C2.6799 16.47 3.2199 17.93 4.6599 18.41C9.4399 20 14.6099 20 19.3899 18.41C20.7399 17.96 21.3199 16.38 20.5899 15.16L19.3199 13.04C18.9699 12.46 18.6899 11.43 18.6899 10.76V8.66C18.6799 5 15.6799 2 12.0199 2Z" stroke={fill ? fill : "white"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round"/>
+      <path d="M15.3299 18.8199C15.3299 20.6499 13.8299 22.1499 11.9999 22.1499C11.0899 22.1499 10.2499 21.7699 9.64992 21.1699C9.04992 20.5699 8.66992 19.7299 8.66992 18.8199" stroke={fill ? fill : "white"} strokeWidth="1.5" strokeMiterlimit="10"/>
     </svg>);
 }
 export function CloseIcon(props) {
     const { className, fill, width, height } = props;
     return (<svg className={className !== null && className !== void 0 ? className : ""} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4.74268 4.75736L13.228 13.2426" stroke={fill ? fill : "#0EC8CE"} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M13.2279 4.75736L4.74262 13.2426" stroke={fill ? fill : "#0EC8CE"} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4.74268 4.75736L13.228 13.2426" stroke={fill ? fill : "#0EC8CE"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M13.2279 4.75736L4.74262 13.2426" stroke={fill ? fill : "#0EC8CE"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>);
+}
+export function EditIcon(props) {
+    const { className, fill, width, height } = props;
+    return (<svg className={className !== null && className !== void 0 ? className : ""} width={width ? width : "24"} height={height ? height : "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM10.95 17.51C10.66 17.8 10.11 18.08 9.71 18.14L7.25 18.49C7.16 18.5 7.07 18.51 6.98 18.51C6.57 18.51 6.19 18.37 5.92 18.1C5.59 17.77 5.45 17.29 5.53 16.76L5.88 14.3C5.94 13.89 6.21 13.35 6.51 13.06L10.97 8.6C11.05 8.81 11.13 9.02 11.24 9.26C11.34 9.47 11.45 9.69 11.57 9.89C11.67 10.06 11.78 10.22 11.87 10.34C11.98 10.51 12.11 10.67 12.19 10.76C12.24 10.83 12.28 10.88 12.3 10.9C12.55 11.2 12.84 11.48 13.09 11.69C13.16 11.76 13.2 11.8 13.22 11.81C13.37 11.93 13.52 12.05 13.65 12.14C13.81 12.26 13.97 12.37 14.14 12.46C14.34 12.58 14.56 12.69 14.78 12.8C15.01 12.9 15.22 12.99 15.43 13.06L10.95 17.51ZM17.37 11.09L16.45 12.02C16.39 12.08 16.31 12.11 16.23 12.11C16.2 12.11 16.16 12.11 16.14 12.1C14.11 11.52 12.49 9.9 11.91 7.87C11.88 7.76 11.91 7.64 11.99 7.57L12.92 6.64C14.44 5.12 15.89 5.15 17.38 6.64C18.14 7.4 18.51 8.13 18.51 8.89C18.5 9.61 18.13 10.33 17.37 11.09Z" fill={fill !== null && fill !== void 0 ? fill : "#FACB22"}/>
+    </svg>);
+}
+export function TrashIcon(props) {
+    const { className, fill, width, height } = props;
+    return (<svg className={className !== null && className !== void 0 ? className : ""} width={width !== null && width !== void 0 ? width : "24"} height={height !== null && height !== void 0 ? height : "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21.0702 5.23C19.4602 5.07 17.8502 4.95 16.2302 4.86V4.85L16.0102 3.55C15.8602 2.63 15.6402 1.25 13.3002 1.25H10.6802C8.35016 1.25 8.13016 2.57 7.97016 3.54L7.76016 4.82C6.83016 4.88 5.90016 4.94 4.97016 5.03L2.93016 5.23C2.51016 5.27 2.21016 5.64 2.25016 6.05C2.29016 6.46 2.65016 6.76 3.07016 6.72L5.11016 6.52C10.3502 6 15.6302 6.2 20.9302 6.73C20.9602 6.73 20.9802 6.73 21.0102 6.73C21.3902 6.73 21.7202 6.44 21.7602 6.05C21.7902 5.64 21.4902 5.27 21.0702 5.23Z" fill={fill !== null && fill !== void 0 ? fill : "#FA2256"}/>
+      <path d="M19.2302 8.14C18.9902 7.89 18.6602 7.75 18.3202 7.75H5.68024C5.34024 7.75 5.00024 7.89 4.77024 8.14C4.54024 8.39 4.41024 8.73 4.43024 9.08L5.05024 19.34C5.16024 20.86 5.30024 22.76 8.79024 22.76H15.2102C18.7002 22.76 18.8402 20.87 18.9502 19.34L19.5702 9.09C19.5902 8.73 19.4602 8.39 19.2302 8.14ZM13.6602 17.75H10.3302C9.92024 17.75 9.58024 17.41 9.58024 17C9.58024 16.59 9.92024 16.25 10.3302 16.25H13.6602C14.0702 16.25 14.4102 16.59 14.4102 17C14.4102 17.41 14.0702 17.75 13.6602 17.75ZM14.5002 13.75H9.50024C9.09024 13.75 8.75024 13.41 8.75024 13C8.75024 12.59 9.09024 12.25 9.50024 12.25H14.5002C14.9102 12.25 15.2502 12.59 15.2502 13C15.2502 13.41 14.9102 13.75 14.5002 13.75Z" fill={fill !== null && fill !== void 0 ? fill : "#FA2256"}/>
+    </svg>);
+}
+export function ClocklIcon(props) {
+    const { className, fill, width, height } = props;
+    return (<svg className={className !== null && className !== void 0 ? className : ""} width={width !== null && width !== void 0 ? width : "18"} height={height !== null && height !== void 0 ? height : "18"} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15.5625 9.9375C15.5625 13.56 12.6225 16.5 9 16.5C5.3775 16.5 2.4375 13.56 2.4375 9.9375C2.4375 6.315 5.3775 3.375 9 3.375C12.6225 3.375 15.5625 6.315 15.5625 9.9375Z" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 6V9.75" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M6.75 1.5H11.25" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>);
+}
+export function MicrophoneIcon(props) {
+    const { className, fill, width, height } = props;
+    return (<svg className={className !== null && className !== void 0 ? className : ""} width={width !== null && width !== void 0 ? width : "18"} height={height !== null && height !== void 0 ? height : "18"} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 11.625C10.6575 11.625 12 10.2825 12 8.625V4.5C12 2.8425 10.6575 1.5 9 1.5C7.3425 1.5 6 2.8425 6 4.5V8.625C6 10.2825 7.3425 11.625 9 11.625Z" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M3.26245 7.2375V8.5125C3.26245 11.6775 5.83495 14.25 8.99995 14.25C12.165 14.25 14.7375 11.6775 14.7375 8.5125V7.2375" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7.95752 4.8225C8.63252 4.575 9.36752 4.575 10.0425 4.8225" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M8.3999 6.4125C8.7974 6.3075 9.2099 6.3075 9.6074 6.4125" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 14.25V16.5" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>);
+}
+export function HeadphoneIcon(props) {
+    const { className, fill, width, height } = props;
+    return (<svg className={className !== null && className !== void 0 ? className : ""} width={width !== null && width !== void 0 ? width : "18"} height={height !== null && height !== void 0 ? height : "18"} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.09504 13.8675V11.6775C4.09504 10.95 4.66504 10.2975 5.47504 10.2975C6.20254 10.2975 6.85504 10.8675 6.85504 11.6775V13.785C6.85504 15.2475 5.64004 16.4625 4.17754 16.4625C2.71504 16.4625 1.50004 15.24 1.50004 13.785V9.165C1.41754 4.95 4.74754 1.5375 8.96254 1.5375C13.1775 1.5375 16.5 4.95 16.5 9.0825V13.7025C16.5 15.165 15.285 16.38 13.8225 16.38C12.36 16.38 11.145 15.165 11.145 13.7025V11.595C11.145 10.8675 11.715 10.215 12.525 10.215C13.2525 10.215 13.905 10.785 13.905 11.595V13.8675" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>);
+}
+export function MessageNotifIcon(props) {
+    const { className, fill, width, height } = props;
+    return (<svg className={className !== null && className !== void 0 ? className : ""} width={width !== null && width !== void 0 ? width : "18"} height={height !== null && height !== void 0 ? height : "18"} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.5 7.5V9.75C16.5 12.75 15 14.25 12 14.25H11.625C11.3925 14.25 11.1675 14.3625 11.025 14.55L9.9 16.05C9.405 16.71 8.595 16.71 8.1 16.05L6.975 14.55C6.855 14.385 6.5775 14.25 6.375 14.25H6C3 14.25 1.5 13.5 1.5 9.75V6C1.5 3 3 1.5 6 1.5H10.5" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M14.625 5.25C15.6605 5.25 16.5 4.41053 16.5 3.375C16.5 2.33947 15.6605 1.5 14.625 1.5C13.5895 1.5 12.75 2.33947 12.75 3.375C12.75 4.41053 13.5895 5.25 14.625 5.25Z" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M11.9973 8.25H12.0041" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M8.99661 8.25H9.00335" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M5.99588 8.25H6.00262" stroke={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>);
+}
+export function VoiceSquareIcon(props) {
+    const { className, fill, width, height } = props;
+    return (<svg width={width !== null && width !== void 0 ? width : "24"} height={height !== null && height !== void 0 ? height : "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.6">
+        <path d="M6 9.85999V14.15" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M9 8.42999V15.57" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 7V17" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M15 8.42999V15.57" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M18 9.85999V14.15" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+    </svg>);
+}
+export function CallSlashIcon(props) {
+    const { className, fill, width, height } = props;
+    return (<svg className={className !== null && className !== void 0 ? className : ""} width={width !== null && width !== void 0 ? width : "24"} height={height !== null && height !== void 0 ? height : "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.6">
+        <path d="M10.3201 18.97C10.4601 19.08 10.6001 19.18 10.7501 19.29C11.8901 20.12 13.0401 20.78 14.1901 21.27C15.3401 21.76 16.4301 22 17.4501 22C18.1501 22 18.8001 21.87 19.4001 21.62C20.0101 21.37 20.5501 20.98 21.0401 20.44C21.3301 20.12 21.5501 19.78 21.7201 19.42C21.8901 19.06 21.9701 18.69 21.9701 18.33C21.9701 18.05 21.9101 17.8 21.8101 17.55C21.7001 17.3 21.5201 17.09 21.2601 16.91L17.9501 14.56C17.7001 14.39 17.4701 14.26 17.2501 14.17C17.0301 14.08 16.8301 14.04 16.6401 14.04C16.3901 14.04 16.1601 14.11 15.9301 14.25C15.7001 14.37 15.4601 14.56 15.2101 14.81L14.4501 15.56C14.3401 15.67 14.2101 15.73 14.0401 15.73C13.9501 15.73 13.8701 15.72 13.7901 15.69C13.7201 15.66 13.6601 15.63 13.6101 15.61C13.4201 15.51 13.2001 15.37 12.9601 15.19" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M10.73 13.22C10.21 12.69 9.73 12.16 9.28 11.64C8.84 11.12 8.53 10.69 8.35 10.36C8.33 10.3 8.3 10.24 8.27 10.16C8.25 10.08 8.24 10.01 8.24 9.93C8.24 9.77 8.29 9.64 8.4 9.53L9.16 8.74C9.4 8.5 9.59 8.26 9.72 8.03C9.86 7.8 9.93 7.56 9.93 7.32C9.93 7.13 9.88 6.92 9.79 6.71C9.7 6.49 9.57 6.26 9.39 6.01L7.07 2.74C6.89 2.48 6.66 2.3 6.4 2.18C6.15 2.06 5.87 2 5.59 2C4.85 2 4.15 2.31 3.51 2.94C2.98 3.44 2.6 4 2.36 4.61C2.12 5.21 2 5.86 2 6.54C2 7.58 2.24 8.67 2.72 9.81C3.2 10.94 3.86 12.08 4.68 13.22C5.51 14.36 6.44 15.45 7.47 16.49" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M22 2L2 22" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
+    </svg>);
+}
+export function MoreRectangleIcon(props) {
+    const { className, fill, width, height } = props;
+    return (<svg className={className !== null && className !== void 0 ? className : ""} width={width !== null && width !== void 0 ? width : "24"} height={height !== null && height !== void 0 ? height : "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 3C3.9 3 3 3.9 3 5C3 6.1 3.9 7 5 7C6.1 7 7 6.1 7 5C7 3.9 6.1 3 5 3Z" fill={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} stroke="#292D32"/>
+      <path d="M5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12C7 10.9 6.1 10 5 10Z" fill={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} stroke="#292D32"/>
+      <path d="M19 3C17.9 3 17 3.9 17 5C17 6.1 17.9 7 19 7C20.1 7 21 6.1 21 5C21 3.9 20.1 3 19 3Z" fill={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} stroke="#292D32"/>
+      <path d="M19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12C21 10.9 20.1 10 19 10Z" fill={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} stroke="#292D32"/>
+      <path d="M12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5C14 3.9 13.1 3 12 3Z" fill={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} stroke="#292D32"/>
+      <path d="M12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z" fill={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} stroke="#292D32"/>
+      <path d="M12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19C14 17.9 13.1 17 12 17Z" fill={fill !== null && fill !== void 0 ? fill : "#0EC8CE"} stroke="#292D32"/>
+    </svg>);
+}
+export function LevelIcon(props) {
+    const { className, fill, width, height } = props;
+    return (<svg className={className !== null && className !== void 0 ? className : ""} width={width !== null && width !== void 0 ? width : "24"} height={height !== null && height !== void 0 ? height : "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.6">
+        <path d="M2.19995 14.02C3.12995 18.58 7.15995 22 12 22C16.82 22 20.8399 18.59 21.7899 14.05" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M21.81 10.06C20.91 5.46 16.86 2 12 2C7.16995 2 3.13995 5.43001 2.19995 9.98001" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z" stroke={fill !== null && fill !== void 0 ? fill : "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
     </svg>);
 }

@@ -11,6 +11,7 @@ export default function OrderSummary() {
   const [initialName, setInitialName] = useState("");
   const [selectedBill, setSelectedBill] = useState("");
   const [selectedBillPrice, setSelectedBillPrice] = useState();
+
   useEffect(() => {
     const arrFullName = fullName.split(" ");
     let initial;
@@ -19,6 +20,7 @@ export default function OrderSummary() {
     });
     setTimeout(() => setInitialName(initial), 200);
   }, []);
+
   const billingList = [
     {
       label: "intro",

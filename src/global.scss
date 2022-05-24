@@ -11,6 +11,10 @@ body {
   font-family: "Axiforma", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  &.kioskboard-body-padding {
+    background: linear-gradient(to left top, #151515, #171717, #1a1a1a, #1c1c1c, #1e1e1e);
+  }
 }
 
 code {
@@ -27,6 +31,11 @@ h2 {
   line-height: 200%;
 }
 
-.txt-crm-primary {
-  @apply text-crm-primary;
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

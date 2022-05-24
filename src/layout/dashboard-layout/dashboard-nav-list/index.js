@@ -17,9 +17,9 @@ export default function DashboardNavList(props) {
           {!isMinimize && <p className="ml-3">Dashboard</p>}
         </NavLink>
       </li>
-      <li className={`py-4 ${activeSidebarList === "dashboard/account" ? "navlist-active" : ""}`}>
+      <li className={`py-4 ${/account/i.test(activeSidebarList) ? "navlist-active" : ""}`}>
         <NavLink to="/dashboard/account" className="flex">
-          <UserProfileIcon className={`${isMinimize && "mx-auto"}`} fill="#98A5CD"/>
+          <UserProfileIcon className={`${isMinimize && "mx-auto"}`} fill={/account/i.test(activeSidebarList) ? "#0EC8CE" : ""}/>
           {!isMinimize && <p className="ml-3">Account</p>}
         </NavLink>
       </li>
@@ -41,9 +41,9 @@ export default function DashboardNavList(props) {
           {!isMinimize && <p className="ml-3">Opportunities</p>}
         </NavLink>
       </li>
-      <li className={`py-4 ${activeSidebarList === "calls" ? "navlist-active" : ""}`}>
-        <NavLink to="/dashboard" className="flex">
-          <CallIcon className={`${isMinimize && "mx-auto"}`}/>
+      <li className={`py-4 ${/calls/i.test(activeSidebarList) ? "navlist-active" : ""}`}>
+        <NavLink to="/dashboard/calls" className="flex">
+          <CallIcon className={`${isMinimize && "mx-auto"}`} fill={/calls/i.test(activeSidebarList) ? "#0EC8CE" : ""}/>
           {!isMinimize && <p className="ml-3">Calls</p>}
         </NavLink>
       </li>
@@ -53,9 +53,9 @@ export default function DashboardNavList(props) {
           {!isMinimize && <p className="ml-3">Sequences</p>}
         </NavLink>
       </li>
-      <li className={`py-4 ${activeSidebarList === "schedules" ? "navlist-active" : ""}`}>
-        <NavLink to="/dashboard" className="flex">
-          <Calendar2Icon className={`${isMinimize && "mx-auto"}`}/>
+      <li className={`py-4 ${/schedules/i.test(activeSidebarList) ? "navlist-active" : ""}`}>
+        <NavLink to="/dashboard/schedules" className="flex">
+          <Calendar2Icon className={`${isMinimize && "mx-auto"}`} fill={/schedules/i.test(activeSidebarList) ? "#0EC8CE" : ""}/>
           {!isMinimize && <p className="ml-3">Schedules</p>}
         </NavLink>
       </li>
@@ -65,9 +65,9 @@ export default function DashboardNavList(props) {
           {!isMinimize && <p className="ml-3">Leads</p>}
         </NavLink>
       </li>
-      <li className={`py-4 ${activeSidebarList === "task" ? "navlist-active" : ""}`}>
-        <NavLink to="/dashboard" className="flex">
-          <NoteIcon className={`${isMinimize && "mx-auto"}`}/>
+      <li className={`py-4 ${/task/i.test(activeSidebarList) ? "navlist-active" : ""}`}>
+        <NavLink to="/dashboard/task" className="flex">
+          <NoteIcon className={`${isMinimize && "mx-auto"}`} fill={/task/i.test(activeSidebarList) ? "#0EC8CE" : ""}/>
           {!isMinimize && <p className="ml-3">Task</p>}
         </NavLink>
       </li>

@@ -2,6 +2,7 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import faker from "@faker-js/faker";
 import { useState } from "react";
+import FilterTab from "@src/components/common/FilterTab";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 export const options = {
     responsive: true,
@@ -35,15 +36,21 @@ export const data = {
 };
 export default function DashboardStatistic() {
     const [activeTab, setActiveTab] = useState("task");
+    const taskTabButton = [
+        {
+            key: "task",
+            onClick: () => setActiveTab("task"),
+            activeIndicator: activeTab,
+        },
+        {
+            key: "emails",
+            onClick: () => setActiveTab("emails"),
+            activeIndicator: activeTab,
+        },
+    ];
     return (<section className="dashboard-statistic  bg-crm-dark-300 text-white w-full px-5 py-3 rounded-md h-[fit-content]">
-      <div className="statistic-tab flex text-crm-gray-600">
-        <button onClick={() => setActiveTab("task")} className={`bg-none py-3 px-3 ${activeTab === "task" && "active"}`}>
-          Task
-        </button>
-        <button onClick={() => setActiveTab("email")} className={`bg-none py-3 px-3  ml-5 ${activeTab === "email" && "active"}`}>
-          Emails
-        </button>
-      </div>
+      <FilterTab tabButton={taskTabButton}/>
+
       <p className="text-white mt-7 font-semibold">Upcoming Task</p>
       <p className="text-white mt-7 text-[14px]">
         This Week : <span className="ml-3 text-crm-gray-600">Apr 11 - Apr 17</span>
