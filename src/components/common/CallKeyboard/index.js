@@ -45,7 +45,7 @@ export default function CallKeyboard(props) {
       </div>
 
       <div className={`crm-keypad ${className ?? ""} `}>
-        <section className="flex gap-x-15">
+        <section className="flex gap-x-16">
           <button className="flex flex-col items-center gap-y-1" onClick={(state) => changeFunc(targetValue + "1")}>
             <span className="text-[24px]">1</span>
             <span className="text-crm-gray-600 font-normal invisible">ABC</span>
@@ -60,7 +60,7 @@ export default function CallKeyboard(props) {
           </button>
         </section>
 
-        <section className="flex gap-x-15">
+        <section className="flex gap-x-16">
           <button className="flex flex-col items-center gap-y-1" onClick={(state) => changeFunc(targetValue + "4")}>
             <span className="text-[24px]">4</span>
             <span className="text-crm-gray-600 font-normal ">GHI</span>
@@ -75,7 +75,7 @@ export default function CallKeyboard(props) {
           </button>
         </section>
 
-        <section className="flex gap-x-15">
+        <section className="flex gap-x-16">
           <button className="flex flex-col items-center gap-y-1" onClick={(state) => changeFunc(targetValue + "7")}>
             <span className="text-[24px]">7</span>
             <span className="text-crm-gray-600 font-normal ">PQRS</span>
@@ -90,7 +90,7 @@ export default function CallKeyboard(props) {
           </button>
         </section>
 
-        <section className="flex gap-x-15">
+        <section className="flex gap-x-16">
           <button className="flex flex-col items-center gap-y-1" onClick={(state) => changeFunc(targetValue + "*")}>
             <span className="text-[24px]">*</span>
             <span className="text-crm-gray-600 font-normal invisible">ABC1</span>
