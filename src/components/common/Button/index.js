@@ -18,7 +18,7 @@ export default function Button(props) {
             crmVariantBtnClass = "bg-crm-dark text-white";
             break;
     }
-    return (<button onClick={onClick} className={`${crmVariantBtnClass} ${className !== null && className !== void 0 ? className : ""} ${paddingClassName ? paddingClassName : "px-8 py-3"} h-[fit-content] rounded-lg font-semibold crm-button max-w-[500px]`}>
+    return (<button onClick={onClick} className={`${crmVariantBtnClass} ${className ?? ""} ${paddingClassName ? paddingClassName : "px-8 py-3"} h-[fit-content] rounded-lg font-semibold crm-button max-w-[500px]`}>
       {children}
     </button>);
 }

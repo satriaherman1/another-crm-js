@@ -1,6 +1,6 @@
 import "./styles.scss";
 export default function MiniInput(props) {
-    const { type, placeholder, icon, className, style, variant } = props;
+    const { type, placeholder, icon, className, style, variant, id, isNoMaxWidth } = props;
     let crmTypeClass;
     let crmVariantClass;
     switch (type) {
@@ -27,5 +27,5 @@ export default function MiniInput(props) {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "3% 47%",
     };
-    return (<input style={style ? { ...style, ...inputStyles } : inputStyles} type={type} placeholder={placeholder !== null && placeholder !== void 0 ? placeholder : ""} className={`${className !== null && className !== void 0 ? className : ""} ${!icon ? "px-3" : " pl-[39px] pr-[7px] "} py-[8px]  ${crmTypeClass} ${crmVariantClass} crm-mini-input  max-w-[500px] w-full`}/>);
+    return (<input style={style ? { ...style, ...inputStyles } : inputStyles} type={type} placeholder={placeholder ?? ""} id={id} className={`${className ?? ""} ${!icon ? "px-3" : " pl-[39px] pr-[7px] "} py-[8px]  ${crmTypeClass} ${crmVariantClass} crm-mini-input  ${!isNoMaxWidth && "max-w-[500px]"} w-full`}/>);
 }

@@ -106,7 +106,7 @@ export default function SettingsProperty() {
         </Button>
       </div>
 
-      <CrmDatatable data={data} columns={columns}/>
+      <CrmDatatable data={data} columns={columns} pagination/>
 
       <Button variant="primary" className="ml-auto block mt-5">
         Submit

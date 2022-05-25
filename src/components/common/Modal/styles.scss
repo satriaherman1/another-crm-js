@@ -1,0 +1,13 @@
+.modal-container {
+  @apply fixed top-0 left-0 w-full h-full bg-crm-dark opacity-90;
+
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.modal-component {
+  @apply bg-crm-dark-300 max-w-[600px]  fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 py-7 px-8 rounded;
+
+  z-index: 11;
+  transition: 0.3s;
+}

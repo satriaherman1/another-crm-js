@@ -15,5 +15,5 @@ export default function Input(props) {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "12px 47%",
     };
-    return (<input style={style ? { ...style, ...inputStyles } : inputStyles} type={type} name={name !== null && name !== void 0 ? name : ""} id={id !== null && id !== void 0 ? id : ""} placeholder={placeholder !== null && placeholder !== void 0 ? placeholder : ""} className={`${className !== null && className !== void 0 ? className : ""} ${!icon ? "px-5" : " pl-[48px] pr-[7px] "} py-[15px]  ${crmTypeClass} ${!isNoMaxWidth && "max-w-[500px]"} crm-input mt-3 `} data-kioskboard-type={numpad ? "numpad" : ""}/>);
+    return (<input style={style ? { ...style, ...inputStyles } : inputStyles} type={type} name={name ?? ""} id={id ?? ""} placeholder={placeholder ?? ""} className={`${className ?? ""} ${!icon ? "px-5" : " pl-[48px] pr-[7px] "} py-[15px]  ${crmTypeClass} ${!isNoMaxWidth && "max-w-[500px]"} crm-input mt-3 `} data-kioskboard-type={numpad ? "numpad" : ""}/>);
 }

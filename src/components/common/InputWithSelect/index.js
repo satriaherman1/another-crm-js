@@ -18,8 +18,8 @@ export default function InputWithSelect(props) {
         console.log(selectRef.current);
         setShowOptLabel(!showOptLabel);
     };
-    return (<section className={`max-w-[500px] w-full flex items-center crm-input-with-select ${className !== null && className !== void 0 ? className : ""}`}>
-      <input style={style} type="text" placeholder={placeholder !== null && placeholder !== void 0 ? placeholder : ""} className={` py-2 px-3 w-full `}/>
+    return (<section className={`max-w-[500px] w-full flex items-center crm-input-with-select ${className ?? ""}`}>
+      <input style={style} type="text" placeholder={placeholder ?? ""} className={` py-2 px-3 w-full `}/>
 
       <div className="relative">
         <select onClick={() => handleClickDropdown()} ref={selectRef} className="crm-input-with-select-dropdown py-2 px-3" name="" id="">

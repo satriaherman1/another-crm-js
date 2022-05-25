@@ -2,7 +2,7 @@ import { LogoFull } from "@src/config/pathImage";
 import "./styles.scss";
 export default function AuthLayout(props) {
     const { className, children } = props;
-    return (<div className={`bg-crm-dark h-[100vh]  overflow-y-scroll ${className !== null && className !== void 0 ? className : ""}`}>
+    return (<div className={`bg-crm-dark h-[100vh]  overflow-y-scroll ${className ?? ""}`}>
       <div className="flex flex-col md:flex-row items-center ">
         <div className="sign-in-banner hidden md:block p-7 flex flex-col">
           <div className="banner-content p-5 h-full">

@@ -80,7 +80,7 @@ function SettingsManagePeople() {
         </div>
       </div>
 
-      <CrmDatatable className="mt-10" columns={columns} data={data} selectableRows/>
+      <CrmDatatable className="mt-10" columns={columns} data={data} selectableRows pagination/>
     </>);
 }
 export default memo(SettingsManagePeople);

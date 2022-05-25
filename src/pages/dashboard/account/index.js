@@ -9,8 +9,12 @@ import { useState } from "react";
 import Button from "@src/components/common/Button";
 import ContactInfoBox from "@src/components/pages/dashboard/account/contact-info-box";
 import AccountInfoBox from "@src/components/pages/dashboard/account/account-info-box";
+import Modal from "@src/components/common/Modal";
+import CreateAccount from "@src/components/pages/dashboard/account/create-account";
+import CreateContact from "@src/components/pages/dashboard/account/create-contact";
 export default function Account() {
     const [activeTab, setActiveTab] = useState("account");
+    const [showModal, setShowModal] = useState(false);
     const newTaskData = [
         {
             date: "06/01/22 04:11:05",
@@ -127,7 +131,7 @@ export default function Account() {
 
         <div className="min-w-[250px] w-full md:w-[fit-content] lg:order-last text-white lg:basis-[25%]">
           <div className="w-[fit-content] lg:ml-auto mt-5 md:mt-0">
-            <Button variant="primary" className="h-[fit-content]" paddingClassName="p-2">
+            <Button onClick={() => setShowModal(true)} variant="primary" className="h-[fit-content]" paddingClassName="p-2">
               <AddIcon />
             </Button>
             <button className="ml-2 rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200 p-2">
@@ -138,5 +142,9 @@ export default function Account() {
           {activeTab === "account" ? (<AccountInfoBox facebookUrl="https://facebook.com" instagramUrl="https://instagram.com" tiktokUrl="https://tiktok.com" twitterUrl="https://twiiter.com" linkedinUrl="https://linkeding.com" zip={59452} city="Austin" username="Ailee Studio" email="ailee@gmail.com" phone="+91 72266181" website="aileestudio.com"/>) : (<ContactInfoBox zip={59452} city="Austin" username="Ailee Studio" email="ailee@gmail.com" phone="+91 72266181" website="aileestudio.com"/>)}
         </div>
       </div>
+
+      <Modal className="text-white" visible={showModal} onClose={() => setShowModal(false)} title={`add ${activeTab}`}>
+        {activeTab === "account" ? <CreateAccount setShowModal={setShowModal}/> : <CreateContact setShowModal={setShowModal}/>}
+      </Modal>
     </DashboardLayout>);
 }

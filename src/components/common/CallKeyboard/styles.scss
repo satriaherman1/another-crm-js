@@ -1,0 +1,58 @@
+.crm-keypad-container {
+  @apply w-full bg-crm-dark-300 rounded-lg border-gray-600 border right-[50%] transform translate-x-[50%] lg:translate-x-0 lg:right-[20px];
+  opacity: 0;
+  z-index: -10;
+  position: fixed;
+
+  top: 60%;
+  animation: hideKeyboardAnimation 0.3s 1;
+
+  max-width: 300px;
+  // transition: 0.5s;
+
+  &.show-keyboard {
+    max-height: 140vh;
+    top: 30%;
+    display: block;
+    opacity: 1;
+    z-index: 1;
+
+    animation: showKeyboardAnimation 0.3s 1;
+  }
+
+  .crm-keypad {
+    @apply flex flex-col items-center gap-y-8 gap-x-6 text-white w-[fit-content];
+
+    section {
+      button {
+        width: 43.234px;
+      }
+    }
+  }
+}
+
+@keyframes showKeyboardAnimation {
+  from {
+    top: 60%;
+  }
+  to {
+    top: 30%;
+  }
+}
+
+@keyframes hideKeyboardAnimation {
+  0% {
+    z-index: 1;
+    opacity: 1;
+    top: 30%;
+  }
+  80% {
+    z-index: 1;
+    opacity: 0;
+  }
+  100% {
+    z-index: -10;
+    opacity: 0;
+    top: 60%;
+  }
+}

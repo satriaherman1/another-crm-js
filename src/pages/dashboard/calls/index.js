@@ -1,25 +1,17 @@
+import CallKeyboard from "@src/components/common/CallKeyboard";
 import Dropdown from "@src/components/common/Dropdown";
 import { AddIcon, CallSlashIcon, ClocklIcon, HeadphoneIcon, LevelIcon, MicrophoneIcon, MoreRectangleIcon, PhoneFilledIcon, VoiceSquareIcon } from "@src/components/common/Icon";
 import DashboardLayout from "@src/layout/dashboard-layout";
-import KioskBoard from "kioskboard";
-import { useEffect } from "react";
+import { useState } from "react";
 export default function Calls() {
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [isShowKeyboard, setIsShowKeyboard] = useState(false);
     const callsFilter = [
         {
             label: "Log Call & Complete",
             value: "Log Call & Complete",
         },
     ];
-    useEffect(() => {
-        KioskBoard.run(".calls-keypad", {
-            keysArrayOfObjects: [
-                { "0": "A", "1": "B", "2": "C" },
-                { "0": "D", "1": "E", "2": "F" },
-            ],
-            keysNumpadArrayOfNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
-            theme: "dark",
-        });
-    }, []);
     return (<DashboardLayout>
       <div className="bg-crm-dark-300 my-5  rounded-md text-white">
         <section className=" py-6 px-8">
@@ -74,9 +66,10 @@ export default function Calls() {
               <button className="ml-6">
                 <CallSlashIcon />
               </button>
-              <button className="ml-6 p-2 rounded-md bg-crm-gray-300 border border-crm-gray-200">
+              <button className={`ml-6 p-2 rounded-md ${isShowKeyboard && "bg-crm-gray-300 border border-crm-gray-200"} `} onClick={() => setIsShowKeyboard(true)}>
                 <MoreRectangleIcon />
               </button>
+
               <button className="ml-5">
                 <LevelIcon />
               </button>
@@ -84,11 +77,7 @@ export default function Calls() {
           </div>
         </section>
 
-        <section className="bg-crm-dark-300">
-          <input onClick={() => {
-            window === null || window === void 0 ? void 0 : window.scrollTo(0, 100);
-        }} type="text" className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0" data-kioskboard-type="numpad" placeholder="type phone number here"/>
-        </section>
+        <CallKeyboard setTargetValue={setPhoneNumber} callAction={() => console.log(`calling ${phoneNumber}...`)} setShowKeyboard={setIsShowKeyboard} showKeyboard={isShowKeyboard} changeFunc={setPhoneNumber} targetValue={phoneNumber} className="mx-auto my-6"/>
       </div>
     </DashboardLayout>);
 }

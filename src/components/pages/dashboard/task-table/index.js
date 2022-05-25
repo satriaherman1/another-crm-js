@@ -3,11 +3,11 @@ import React from "react";
 export default function DashboardTaskTable(props) {
     const { className, columns, rows, head, heading } = props;
     return (<div className={` overflow-x-scroll  `}>
-      {head !== null && head !== void 0 ? head : ""}
+      {head ?? ""}
 
       <section className="flex my-4 border-b border-crm-gray-350">{heading}</section>
 
-      <table className={`${className !== null && className !== void 0 ? className : ""}  min-w-full relative block  dark:divide-gray-700 `}>
+      <table className={`${className ?? ""}  min-w-full relative block  dark:divide-gray-700 `}>
         <thead className="bg-gray-100 dark:bg-gray-700">
           <tr>
             {/* <th scope="col" className="p-4">
@@ -32,22 +32,19 @@ export default function DashboardTaskTable(props) {
           </tr>
         </thead>
         <tbody className="  dark:bg-gray-800 dark:divide-gray-700">
-          {rows.map((r) => {
-            var _a;
-            return (<tr className="">
+          {rows.map((r) => (<tr className="">
               <td className="p-2 w-4">
                 <div className="flex items-center">
                   <Checkbox />
                 </div>
               </td>
-              {(_a = r === null || r === void 0 ? void 0 : r.value) === null || _a === void 0 ? void 0 : _a.map((val) => (<td className="py-4 px-2 text-sm  font-medium text-white  dark:text-white">{val.value}</td>))}
+              {r?.value?.map((val) => (<td className="py-4 px-2 text-sm  font-medium text-white  dark:text-white">{val.value}</td>))}
               {/* <td className="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-                  <a href="#" className="text-blue-600 dark:text-blue-500 hover:underline">
-                    Edit
-                  </a>
-                </td> */}
-            </tr>);
-        })}
+              <a href="#" className="text-blue-600 dark:text-blue-500 hover:underline">
+                Edit
+              </a>
+            </td> */}
+            </tr>))}
         </tbody>
       </table>
     </div>);
