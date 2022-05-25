@@ -30,7 +30,9 @@
     "postcss": "^8.4.14",
     "react-app-rewired": "^2.2.1",
     "sass": "^1.50.1",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "windicss": "^3.5.1",
+    "windicss-webpack-plugin": "^1.7.2"
   },
   "scripts": {
     "start": "craco start",
