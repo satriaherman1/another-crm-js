@@ -10,7 +10,7 @@ $inputPrimary: #0ec8ce;
     @apply bg-crm-gray-200 border border-crm-gray-300 text-crm-mutted-blue;
   }
   &.crm-mini-input-transparent {
-    @apply bg-transparent border border-crm-gray-600 text-crm-white;
+    @apply bg-transparent border border-crm-gray-600 text-white;
 
     &:focus {
       @apply border-white;
