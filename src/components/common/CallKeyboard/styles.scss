@@ -1,12 +1,11 @@
 .crm-keypad-container {
   @apply w-full bg-crm-dark-300 rounded-lg border-gray-600 border right-[50%] transform translate-x-[50%] lg:translate-x-0 lg:right-[20px];
+
   opacity: 0;
   z-index: -10;
   position: fixed;
-
   top: 60%;
   animation: hideKeyboardAnimation 0.3s 1;
-
   max-width: 300px;
 
   &.show-keyboard {
