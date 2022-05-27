@@ -9,7 +9,12 @@ export default function NestedFilter(props) {
   return (
     <>
       {" "}
-      <div className="relative text-white text-[14px]">
+      <div
+        className="relative text-white text-[14px]"
+        style={{
+          zIndex: 20,
+        }}
+      >
         <button onClick={() => setOpenFilter(!openFilter)} className="items-center flex p-2 font-normal rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200">
           {icon ?? <FilterOutlinedIcon />}
           <span className="ml-2 capitalize">{label}</span>
