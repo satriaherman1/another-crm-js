@@ -1,6 +1,6 @@
 .crm-datatable {
   border-radius: 10px 10px 0 0;
-  font-family: "Axiforma", sans-serif;
+  font-family: "inter", sans-serif !important;
 
   .sc-hKMtZM {
     padding: 20px;
@@ -11,6 +11,10 @@
       background-color: #1e1f25;
       color: white;
     }
+  }
+
+  .bnAwAJ {
+    min-width: unset;
   }
 
   .rdt_TableBody {

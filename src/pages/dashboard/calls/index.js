@@ -4,16 +4,15 @@ import { AddIcon, CallSlashIcon, ClocklIcon, HeadphoneIcon, LevelIcon, Microphon
 import DashboardLayout from "@src/layout/dashboard-layout";
 import { useState } from "react";
 export default function Calls() {
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [isShowKeyboard, setIsShowKeyboard] = useState(false);
-  const callsFilter = [
-    {
-      label: "Log Call & Complete",
-      value: "Log Call & Complete",
-    },
-  ];
-  return (
-    <DashboardLayout>
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [isShowKeyboard, setIsShowKeyboard] = useState(false);
+    const callsFilter = [
+        {
+            label: "Log Call & Complete",
+            value: "Log Call & Complete",
+        },
+    ];
+    return (<DashboardLayout>
       <div className="bg-crm-dark-300 my-5  rounded-md text-white">
         <section className=" py-6 px-8">
           Calls
@@ -21,7 +20,7 @@ export default function Calls() {
             <div className="py-2 px-3 rounded-md bg-crm-gray-200 border border-crm-gray-300 w-[fit-content] flex items-center">
               <ClocklIcon />
             </div>
-            <Dropdown className="bg-crm-gray-200 rounded" borderVariantClass="border border-crm-gray-300" variant="outlined" optList={callsFilter} />
+            <Dropdown className="bg-crm-gray-200 rounded" borderVariantClass="border border-crm-gray-300" variant="outlined" optList={callsFilter}/>
           </div>
         </section>
         <section className="bg-crm-gray-280 py-5 px-7 border-t border-crm-gray-200">
@@ -29,7 +28,7 @@ export default function Calls() {
             <div className="flex gap-x-2">
               <div className="py-3 px-5 rounded-md text-crm-yellow border border-crm-gray-300 bg-crm-gray-200 font-semibold w-[fit-content]">+1 8923 9293 42900</div>
               <button>
-                <AddIcon fill="#0EC8CE" />
+                <AddIcon fill="#0EC8CE"/>
               </button>
             </div>
             <div className="flex gap-x-2">
@@ -47,7 +46,7 @@ export default function Calls() {
 
           <div className="my-6 flex flex-col lg:flex-row gap-y-6 justify-between items-center">
             <section className="flex flex-col lg:flex-row gap-y-4 items-center">
-              <img src={"/assets/img/avatar-example.png"} width={60} alt="" />
+              <img src={"/src/assets/img/avatar-example.png"} width={60} alt=""/>
 
               <div className="flex flex-col lg:ml-5">
                 <h5 className="text-white font-semibold text-[20px]">Jordan Olivas</h5>
@@ -55,7 +54,7 @@ export default function Calls() {
               </div>
 
               <button className="bg-crm-red p-3 rounded-full lg:ml-12">
-                <PhoneFilledIcon fill="#fff" />
+                <PhoneFilledIcon fill="#fff"/>
               </button>
             </section>
 
@@ -78,16 +77,7 @@ export default function Calls() {
           </div>
         </section>
 
-        <CallKeyboard
-          setTargetValue={setPhoneNumber}
-          callAction={() => console.log(`calling ${phoneNumber}...`)}
-          setShowKeyboard={setIsShowKeyboard}
-          showKeyboard={isShowKeyboard}
-          changeFunc={setPhoneNumber}
-          targetValue={phoneNumber}
-          className="mx-auto my-6"
-        />
+        <CallKeyboard setTargetValue={setPhoneNumber} callAction={() => console.log(`calling ${phoneNumber}...`)} setShowKeyboard={setIsShowKeyboard} showKeyboard={isShowKeyboard} changeFunc={setPhoneNumber} targetValue={phoneNumber} className="mx-auto my-6"/>
       </div>
-    </DashboardLayout>
-  );
+    </DashboardLayout>);
 }

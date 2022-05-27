@@ -96,6 +96,52 @@ export default function Account() {
             reorder: true,
         },
     ];
+    const data2 = [
+        {
+            id: 1,
+            companyName: "Jordan Olivas",
+            url: "CEO",
+            phone: "+91 2923 1929",
+            stage: "Discover Debit",
+        },
+    ];
+    const columns2 = [
+        {
+            id: 1,
+            name: "Company Name",
+            selector: (row) => row.companyName,
+            sortable: true,
+            reorder: true,
+        },
+        {
+            id: 2,
+            name: "URL",
+            selector: (row) => row.url,
+            sortable: true,
+            reorder: true,
+        },
+        {
+            id: 3,
+            name: "Phone",
+            selector: (row) => row.phone,
+            sortable: true,
+            reorder: true,
+        },
+        {
+            id: 4,
+            name: "State",
+            selector: (row) => row.state,
+            sortable: true,
+            reorder: true,
+        },
+        {
+            id: 4,
+            name: "Action",
+            selector: (row) => "...",
+            sortable: true,
+            reorder: true,
+        },
+    ];
     return (<DashboardLayout>
       <div className="flex lg:gap-x-2 lg:justify-between lg:gap-0 order-1 flex-wrap lg:flex-nowrap mt-6 ">
         <div className="flex flex-wrap lg:basis-[25%]">
@@ -110,12 +156,12 @@ export default function Account() {
           </div>
         </div>
 
-        <div className="flex flex-col order-last lg:order-2 lg:basis-[50%] overflow-hidden">
+        <div className="flex flex-col order-last lg:order-2 lg:basis-[50%] overflow-hidden w-full">
           <div className="flex justify-between items-center mt-5 lg:mt-0">
             <MiniInput type="text" variant="crm-gray" placeholder="Search by name or email" icon={SearchIcon} className="max-w-[300px] mb-4"/>
           </div>
 
-          <div className="bg-crm-dark-300 rounded-md py-3">
+          <div className="bg-crm-dark-300 rounded-md py-3 w-full">
             <div className="account-tab flex text-crm-gray-600 mb-2 px-7 ">
               <button onClick={() => setActiveTab("account")} className={`bg-none py-3 px-3 ${activeTab === "account" && "active"}`}>
                 Account
@@ -125,11 +171,11 @@ export default function Account() {
               </button>
             </div>
 
-            <CrmDatatable data={data} columns={columns} className="mx-1 border-0" pagination/>
+            <CrmDatatable data={activeTab === "account" ? data2 : data} columns={activeTab === "account" ? columns2 : columns} className="mx-1 border-0" pagination/>
           </div>
         </div>
 
-        <div className="min-w-[250px] w-full md:w-[fit-content] lg:order-last text-white lg:basis-[25%]">
+        <div className="min-w-[250px] w-full lg:w-[fit-content] lg:order-last text-white lg:basis-[25%]">
           <div className="w-[fit-content] lg:ml-auto mt-5 md:mt-0">
             <Button onClick={() => setShowModal(true)} variant="primary" className="h-[fit-content]" paddingClassName="p-2">
               <AddIcon />

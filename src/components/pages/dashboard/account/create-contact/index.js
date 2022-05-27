@@ -16,7 +16,7 @@ export default function CreateContact(props) {
         },
     ];
     return (<div className="flex flex-col gap-y-6 my-5 ">
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flex-row gap-x-5 ">
         <section>
           <label htmlFor="firstName">First Name</label>
           <MiniInput variant="crm-transparent" id="firstName" type="text" className="block py-2 mt-2 min-w-[250px]"/>
@@ -26,13 +26,13 @@ export default function CreateContact(props) {
           <MiniInput variant="crm-transparent" id="title" type="text" className="block py-2 mt-2 min-w-[250px]"/>
         </section>
       </div>
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flex-row gap-x-5 ">
         <section className="w-full">
           <label htmlFor="title">Title</label>
           <MiniInput variant="crm-transparent" id="title" type="text" className="block py-2 mt-2 min-w-[250px] w-full" isNoMaxWidth/>
         </section>
       </div>
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flex-row gap-x-5 ">
         <section>
           <label htmlFor="email">Email</label>
           <MiniInput variant="crm-transparent" id="email" type="text" className="block py-2 mt-2 min-w-[250px]"/>
@@ -42,19 +42,19 @@ export default function CreateContact(props) {
           <MiniInput variant="crm-transparent" id="title" type="text" className="block py-2 mt-2 min-w-[250px]"/>
         </section>
       </div>
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flex-row gap-x-5 ">
         <section className="w-full">
           <label htmlFor="website">Website Url</label>
           <MiniInput variant="crm-transparent" id="website" type="url" className="block py-2 mt-2 min-w-[250px] w-full" isNoMaxWidth/>
         </section>
       </div>
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flex-row gap-x-5 ">
         <section className="w-full">
           <label htmlFor="address">Address</label>
           <MiniInput variant="crm-transparent" id="address" type="url" className="block py-2 mt-2 min-w-[250px] w-full" isNoMaxWidth/>
         </section>
       </div>
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flex-row gap-x-5 ">
         <section className="w-full">
           <label htmlFor="state">State</label>
           <Dropdown optList={stateList} variant="outlined" id="state" className="block py-2 mt-2 min-w-[250px] w-full" isNoMaxWidth/>
@@ -64,7 +64,7 @@ export default function CreateContact(props) {
           <Dropdown optList={cityList} variant="outlined" id="city" className="block py-2 mt-2 min-w-[250px] w-full" isNoMaxWidth/>
         </section>
       </div>
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flex-row gap-x-5 ">
         <section className="w-full">
           <label htmlFor="zip">Zip Code</label>
           <MiniInput variant="crm-transparent" id="zip" type="text" className="block py-2 mt-2 min-w-[250px] w-full" isNoMaxWidth/>
@@ -73,7 +73,7 @@ export default function CreateContact(props) {
 
       <button className="text-crm-mutted-blue self-start">Show All Fields</button>
 
-      <section className="flex justify-between items-center text-[14px]">
+      <section className="flex  justify-between items-center text-[14px]">
         <p>
           <a href="" className="underline">
             Terms of Service

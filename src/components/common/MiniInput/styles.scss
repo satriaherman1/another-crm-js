@@ -10,7 +10,7 @@ $inputPrimary: #0ec8ce;
     @apply bg-crm-gray-200 border border-crm-gray-300 text-crm-mutted-blue;
   }
   &.crm-mini-input-transparent {
-    @apply bg-transparent border border-crm-gray-600 text-white;
+    @apply bg-transparent border border-crm-gray-600 text-crm-white;
 
     &:focus {
       @apply border-white;
@@ -28,7 +28,7 @@ $inputPrimary: #0ec8ce;
     height: 20px;
     width: 20px;
     border-radius: 10px;
-    background-image: url("/assets/icons/dashboard/close-circle.svg");
+    background-image: url("/src/assets/icons/dashboard/close-circle.svg");
     background-repeat: no-repeat;
   }
 }

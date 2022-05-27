@@ -36,6 +36,14 @@ select {
   -moz-appearance: none;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.font-inter {
+  font-family: "inter", sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

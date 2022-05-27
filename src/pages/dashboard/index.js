@@ -1,11 +1,72 @@
 import DashboardLayout from "@src/layout/dashboard-layout";
-import { EyeIcon, FilterIcon, MailIcon, MonitorIcon, SendIcon, TickCircleIcon, VideoCircleIcon } from "@src/components/common/Icon";
+import { Calendar2Icon, EyeIcon, FilterOutlinedIcon, FilterRemoveOutlined, MailIcon, MonitorIcon, SendIcon, TickCircleIcon, UserOutlined, VideoCircleIcon } from "@src/components/common/Icon";
 import DashboardActivityList from "@src/components/pages/dashboard/activity-list";
 import DashboardStatistic from "@src/components/pages/dashboard/statistic";
-import "./styles.scss";
+import originalMoment from "moment";
+import { extendMoment } from "moment-range";
 import DashboardTaskList from "@src/components/pages/dashboard/task-list";
-import moment from "moment";
+import NestedFilter from "@src/components/common/NestedFilter";
+import { useState } from "react";
+import "./styles.scss";
+import DateRangePicker from "react-daterange-picker";
+const moment = extendMoment(originalMoment);
 export default function Dashboard() {
+    const filterTypeList = [
+        {
+            name: "email",
+            filterList: [
+                {
+                    label: "opened",
+                },
+                {
+                    label: "clicked",
+                },
+                {
+                    label: "replied",
+                },
+                {
+                    label: "received",
+                },
+            ],
+        },
+        {
+            name: "calls",
+            filterList: [
+                {
+                    label: "opened",
+                },
+                {
+                    label: "clicked",
+                },
+                {
+                    label: "replied",
+                },
+                {
+                    label: "received",
+                },
+            ],
+        },
+        {
+            name: "sms",
+            filterList: [
+                {
+                    label: "opened",
+                },
+                {
+                    label: "clicked",
+                },
+                {
+                    label: "replied",
+                },
+                {
+                    label: "received",
+                },
+            ],
+        },
+    ];
+    const today = moment();
+    const [dateFilter, setDateFilter] = useState(moment.range(today.clone().subtract(7, "days"), today.clone()));
+    const [openDateFilter, setOpenDateFilter] = useState(false);
     return (<DashboardLayout>
       <div className="flex flex-col md:flex-row  mt-8 w-full gap-5 ">
         <div className="md:w-[60%]">
@@ -14,11 +75,23 @@ export default function Dashboard() {
         </div>
 
         <section className=" py-4 bg-crm-dark-300 md:w-[40%] h-[fit-content] rounded-md">
-          <div className="flex">
-            <button className="p-2 rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200">
-              <FilterIcon />
+          <div className="flex flex-wrap gap-3">
+            <NestedFilter icon={<FilterOutlinedIcon />} label="Type" filters={filterTypeList}/>
+            <NestedFilter icon={<UserOutlined />} label="Person" filters={filterTypeList}/>
+            <div className="relative">
+              <button onClick={() => setOpenDateFilter(!openDateFilter)} className="rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200 py-1 px-2">
+                <Calendar2Icon fill="#fff"/>
+              </button>
+              {openDateFilter && (<div className="absolute left-[-400%] md:left-[-300%]">
+                  <DateRangePicker singleDateRange className="bg-white " value={dateFilter} onSelect={(val) => {
+                setDateFilter(val);
+                setOpenDateFilter(false);
+            }}/>
+                </div>)}
+            </div>
+            <button className="rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200 p-2">
+              <FilterRemoveOutlined />
             </button>
-            <button className="py-2 px-3 text-white font-normal rounded-md border border-crm-gray-350 ml-2 bg-crm-gray-200">Clear Filters</button>
           </div>
 
           <div className="w-full bg-crm-gray-400 mt-4 py-3 px-5 text-crm-gray border-y border-crm-gray-350">2 weeks ago</div>

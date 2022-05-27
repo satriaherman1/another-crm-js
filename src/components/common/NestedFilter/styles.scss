@@ -1,0 +1,15 @@
+.filter-list {
+  z-index: 100;
+  .filter-child-list {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: 0.3s;
+  }
+  .open {
+    .filter-child-list {
+      @apply py-3;
+      max-height: 200px;
+    }
+  }
+}
