@@ -15,15 +15,8 @@ export default function Dropdown(props) {
   }
   return (
     <>
-      <div className={`relative crm-dropdown ${!isNoMaxWidth ? "max-w-[500px]" : ""}  ${className ?? ""}`}>
-        <select
-          placeholder={placeholder}
-          id={id ?? ""}
-          name={name ?? ""}
-          onClick={() => handleClickDropdown()}
-          ref={selectRef}
-          className={`${dropdownVariantClass} ${borderVariantClass ?? "base-border"}  py-2 pl-3 pr-[30px]`}
-        >
+      <div onClick={() => handleClickDropdown()} className={`relative crm-dropdown ${!isNoMaxWidth ? "max-w-[500px]" : ""}  ${className ?? ""}`}>
+        <select placeholder={placeholder} id={id ?? ""} name={name ?? ""} ref={selectRef} className={`${dropdownVariantClass} ${borderVariantClass ?? "base-border"}  py-2 pl-3 pr-[30px]`}>
           {optList.map((opt) => (
             <option key={opt.value} value={opt.value}>
               {opt.label}
