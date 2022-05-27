@@ -46,6 +46,7 @@ export default function DashboardLayout(props) {
 
         <section className="crm-dashboard-content mt-[9vh] lg:mt-3 ml-8 w-full overflow-y-scroll">
           <DashboardHeader />
+          {children}
         </section>
       </div>
     </div>
