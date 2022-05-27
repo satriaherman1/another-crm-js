@@ -54,7 +54,10 @@ export default function Dropdown(props) {
       </div>
 
       <div
-        className={`${!showOptLabel && "hidden"} fixed top-0 left-0 w-[100vw] h-[100vh] z-10" `}
+        className={`${!showOptLabel && "hidden"} fixed top-0 left-0 w-[100vw] h-[100vh]" `}
+        style={{
+          zIndex: 10,
+        }}
         onClick={() => {
           setShowOptLabel(false);
           console.log("test");
