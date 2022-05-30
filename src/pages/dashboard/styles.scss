@@ -31,3 +31,26 @@
 .task-column-table {
   @apply w-[300px] break-all leading-[170%];
 }
+
+.date-filter-button {
+  @apply flex-col p-2 font-normal rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200;
+  overflow: hidden;
+  .clear-filter {
+    border-radius: 100px;
+    padding: 2px;
+    position: absolute;
+    display: none;
+    top: -8px;
+    right: -8px;
+    background-color: #912308;
+  }
+
+  &.filtered {
+    border: 1px solid rgb(40, 132, 114);
+    background-color: rgba(49, 165, 142, 0.475);
+
+    .clear-filter {
+      display: block;
+    }
+  }
+}

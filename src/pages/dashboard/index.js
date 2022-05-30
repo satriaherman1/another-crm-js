@@ -1,5 +1,17 @@
 import DashboardLayout from "@src/layout/dashboard-layout";
-import { Calendar2Icon, EyeIcon, FilterOutlinedIcon, FilterRemoveOutlined, MailIcon, MonitorIcon, SendIcon, TickCircleIcon, UserOutlined, VideoCircleIcon } from "@src/components/common/Icon";
+import {
+  Calendar2Icon,
+  CloseIcon,
+  EyeIcon,
+  FilterOutlinedIcon,
+  FilterRemoveOutlined,
+  MailIcon,
+  MonitorIcon,
+  SendIcon,
+  TickCircleIcon,
+  UserOutlined,
+  VideoCircleIcon,
+} from "@src/components/common/Icon";
 import DashboardActivityList from "@src/components/pages/dashboard/activity-list";
 import DashboardStatistic from "@src/components/pages/dashboard/statistic";
 import originalMoment from "moment";
@@ -123,6 +135,33 @@ export default function Dashboard() {
   const today = moment();
   const [dateFilter, setDateFilter] = useState(moment.range(today.clone().subtract(7, "days"), today.clone()));
   const [openDateFilter, setOpenDateFilter] = useState(false);
+  const [isDateFilter, setIsDateFilter] = useState(false);
+
+  useEffect(() => {
+    let typeFilterCount = typeFilter.filter((type) => type.checked === true).length;
+    let typeFilterChild = typeFilter.map((type) => type.filterList.filter((tc) => tc.checked === true));
+    let typeFilterChildCount = 0;
+    typeFilterChild = typeFilterChild.map((tfc) => tfc.length);
+    typeFilterChild.map((tfc) => {
+      typeFilterChildCount += tfc;
+    });
+    let personFilterCount = personFilter.filter((person) => person.checked === true).length;
+    let personFilterChild = personFilter.filter((person) => person.filterList.filter((tc) => tc.checked === true));
+    let personFilterChildCount = 0;
+    personFilterChild = personFilterChild.map((tfc) => tfc.length);
+    // console.log(personFilterChild, personFilterChild);
+    personFilterChild.map((tfc) => {
+      personFilterChildCount += tfc;
+    });
+
+    console.log(typeFilterCount + typeFilterChildCount + personFilterCount + personFilterChildCount);
+
+    if (typeFilterCount + typeFilterChildCount + personFilterCount + personFilterChildCount === 0) {
+      console.log("disabled");
+    } else {
+      console.log("enable");
+    }
+  }, [typeFilter, personFilter]);
 
   return (
     <DashboardLayout>
@@ -136,9 +175,18 @@ export default function Dashboard() {
           <div className="flex flex-wrap gap-3">
             <NestedFilter state={typeFilter} setState={setTypeFilter} icon={<FilterOutlinedIcon />} label="Type" filters={filterTypeList} />
             <NestedFilter state={personFilter} setState={setPersonFilter} icon={<UserOutlined />} label="Person" filters={personFilterList} />
-            <div className="relative">
-              <button onClick={() => setOpenDateFilter(!openDateFilter)} className="rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200 p-2">
+            <div className="date-filter-button h-[42px]">
+              <button onClick={() => setOpenDateFilter(!openDateFilter)}>
                 <Calendar2Icon fill="#fff" />
+              </button>
+              <button
+                className="clear-filter"
+                onClick={() => {
+                  setDateFilter("");
+                  setIsDateFilter(false);
+                }}
+              >
+                <CloseIcon />
               </button>
               {openDateFilter && (
                 <div className="absolute left-[-400%] md:left-[-300%]">
@@ -149,6 +197,7 @@ export default function Dashboard() {
                     onSelect={(val) => {
                       setDateFilter(val);
                       setOpenDateFilter(false);
+                      setIsDateFilter(true);
                     }}
                   />
                 </div>

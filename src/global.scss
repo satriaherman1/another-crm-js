@@ -44,6 +44,10 @@ select {
   font-family: "inter", sans-serif;
 }
 
+.disabled {
+  opacity: 0.3;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
