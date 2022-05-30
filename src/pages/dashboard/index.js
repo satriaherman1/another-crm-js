@@ -175,7 +175,7 @@ export default function Dashboard() {
           <div className="flex flex-wrap gap-3">
             <NestedFilter state={typeFilter} setState={setTypeFilter} icon={<FilterOutlinedIcon />} label="Type" filters={filterTypeList} />
             <NestedFilter state={personFilter} setState={setPersonFilter} icon={<UserOutlined />} label="Person" filters={personFilterList} />
-            <div className="date-filter-button h-[42px]">
+            <div className={`date-filter-button h-[42px] ${isDateFilter && "filtered"}`}>
               <button onClick={() => setOpenDateFilter(!openDateFilter)}>
                 <Calendar2Icon fill="#fff" />
               </button>
