@@ -16,26 +16,35 @@ export default function CreateAccount(props) {
       value: "central java",
     },
   ];
-  const ownerList = [
-    {
-      label: "Jordan Olivas",
-      value: "Jordan Olivas",
-    },
-  ];
-  const prospectStageList = [
-    {
-      label: "No Stage",
-      value: "no stage",
-    },
-  ];
   const phoneFormatList = [
     {
       label: "+62",
       value: "+62",
     },
+    {
+      label: "+91",
+      value: "+91",
+    },
   ];
+
+  const submitAction = (event) => {
+    event.preventDefault();
+    const form = document.querySelector("form");
+    let valid = true;
+    form.querySelectorAll("input").forEach((inp) => {
+      if (inp.value.length === 0) {
+        console.log(inp);
+        valid = false;
+      }
+    });
+
+    if (valid) {
+      setShowModal(false);
+    }
+  };
+
   return (
-    <form className="flex flex-col gap-y-6 my-5 ">
+    <form className="flex flex-col gap-y-6 my-5 " onSubmit={submitAction}>
       <div className="flex flex-col md:flex-row gap-5 ">
         <section>
           <label htmlFor="company">Company Name</label>
@@ -89,9 +98,7 @@ export default function CreateAccount(props) {
           .
         </p>
 
-        <Button variant="primary" onClick={() => setShowModal(false)}>
-          Create
-        </Button>
+        <Button variant="primary">Create</Button>
       </section>
     </form>
   );

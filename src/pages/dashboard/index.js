@@ -6,14 +6,68 @@ import originalMoment from "moment";
 import { extendMoment } from "moment-range";
 import DashboardTaskList from "@src/components/pages/dashboard/task-list";
 import NestedFilter from "@src/components/common/NestedFilter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles.scss";
 import DateRangePicker from "react-daterange-picker";
 const moment = extendMoment(originalMoment);
 export default function Dashboard() {
   const [typeFilter, setTypeFilter] = useState([]);
   const [personFilter, setPersonFilter] = useState([]);
+
   const filterTypeList = [
+    {
+      name: "email",
+      filterList: [
+        {
+          label: "opened",
+        },
+        {
+          label: "clicked",
+        },
+        {
+          label: "replied",
+        },
+        {
+          label: "received",
+        },
+      ],
+    },
+    {
+      name: "calls",
+      filterList: [
+        {
+          label: "opened",
+        },
+        {
+          label: "clicked",
+        },
+        {
+          label: "replied",
+        },
+        {
+          label: "received",
+        },
+      ],
+    },
+    {
+      name: "sms",
+      filterList: [
+        {
+          label: "opened",
+        },
+        {
+          label: "clicked",
+        },
+        {
+          label: "replied",
+        },
+        {
+          label: "received",
+        },
+      ],
+    },
+  ];
+  const personFilterList = [
     {
       name: "email",
       filterList: [
@@ -69,6 +123,7 @@ export default function Dashboard() {
   const today = moment();
   const [dateFilter, setDateFilter] = useState(moment.range(today.clone().subtract(7, "days"), today.clone()));
   const [openDateFilter, setOpenDateFilter] = useState(false);
+
   return (
     <DashboardLayout>
       <div className="flex flex-col md:flex-row  mt-8 w-full gap-5 ">
@@ -80,9 +135,9 @@ export default function Dashboard() {
         <section className=" py-4 bg-crm-dark-300 md:w-[40%] h-[fit-content] rounded-md">
           <div className="flex flex-wrap gap-3">
             <NestedFilter state={typeFilter} setState={setTypeFilter} icon={<FilterOutlinedIcon />} label="Type" filters={filterTypeList} />
-            <NestedFilter state={personFilter} setState={setPersonFilter} icon={<UserOutlined />} label="Person" filters={filterTypeList} />
+            <NestedFilter state={personFilter} setState={setPersonFilter} icon={<UserOutlined />} label="Person" filters={personFilterList} />
             <div className="relative">
-              <button onClick={() => setOpenDateFilter(!openDateFilter)} className="rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200 py-1 px-2">
+              <button onClick={() => setOpenDateFilter(!openDateFilter)} className="rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200 p-2">
                 <Calendar2Icon fill="#fff" />
               </button>
               {openDateFilter && (
@@ -99,7 +154,30 @@ export default function Dashboard() {
                 </div>
               )}
             </div>
-            <button className="rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200 p-2">
+            <button
+              onClick={() => {
+                let currentTypeFilter = typeFilter.map((tf) => {
+                  tf.checked = false;
+                  tf.filterList.map((tfl) => {
+                    tfl.checked = false;
+                    return tfl;
+                  });
+                  return tf;
+                });
+                let currentPersonFilter = personFilter.map((tf) => {
+                  tf.checked = false;
+                  tf.filterList.map((tfl) => {
+                    tfl.checked = false;
+                    return tfl;
+                  });
+                  return tf;
+                });
+
+                setTypeFilter(currentTypeFilter);
+                setPersonFilter(currentPersonFilter);
+              }}
+              className="rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200 p-2"
+            >
               <FilterRemoveOutlined />
             </button>
           </div>

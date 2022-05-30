@@ -15,7 +15,7 @@
 }
 
 .filter-button {
-  @apply relative items-center flex p-2 font-normal rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200;
+  @apply items-center flex p-2 font-normal rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200;
   .clear-filter {
     border-radius: 100px;
     padding: 2px;
