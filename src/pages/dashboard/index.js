@@ -189,7 +189,7 @@ export default function Dashboard() {
                 <CloseIcon />
               </button>
               {openDateFilter && (
-                <div className="absolute left-[-400%] md:left-[-300%]">
+                <div className="absolute left-[-400%] md:left-[-500%]">
                   <DateRangePicker
                     singleDateRange
                     className="bg-white "
