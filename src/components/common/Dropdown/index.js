@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import "./styles.scss";
 export default function Dropdown(props) {
-  const { defaultValue, className, optList, onClick, variant, onChange, paddingClassName, id, name, borderVariantClass, placeholder, isNoMaxWidth } = props;
+  const { defaultValue, className, optList, onClick, variant, onChange, paddingClassName, id, name, borderVariantClass, placeholder, isNoMaxWidth, value } = props;
   const [showOptLabel, setShowOptLabel] = useState(false);
   const selectRef = useRef(null);
   let dropdownVariantClass;
@@ -22,10 +22,11 @@ export default function Dropdown(props) {
           id={id ?? ""}
           name={name ?? ""}
           ref={selectRef}
+          value={value}
           className={`${dropdownVariantClass} ${borderVariantClass ?? "base-border"}  py-2 pl-3 pr-[30px]`}
         >
           {optList.map((opt) => (
-            <option key={opt.value} value={opt.value}>
+            <option selected={value === opt.value} key={opt.value} value={opt.value}>
               {opt.label}
             </option>
           ))}
@@ -42,6 +43,7 @@ export default function Dropdown(props) {
               onClick={() => {
                 if (selectRef.current && selectRef.current.value) {
                   selectRef.current.value = opt.value;
+                  onChange(opt.value);
                 }
                 setShowOptLabel(!showOptLabel);
               }}

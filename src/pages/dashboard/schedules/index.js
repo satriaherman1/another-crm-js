@@ -6,8 +6,8 @@ import { useState } from "react";
 
 export default function Schedules() {
   const [mondaySchedule, setMondaySchedule] = useState({
-    start: "",
-    end: "",
+    start: "12:00 AM",
+    end: "12:00 AM",
   });
   const timeZoneList = [
     {
@@ -60,8 +60,8 @@ export default function Schedules() {
             <Dropdown
               onChange={(e) => {
                 const currentSchedule = mondaySchedule;
-                console.log(e);
-                currentSchedule.start = e.current.value;
+
+                currentSchedule.start = e;
                 setMondaySchedule(currentSchedule);
               }}
               value={mondaySchedule.start}
@@ -73,15 +73,22 @@ export default function Schedules() {
             <Dropdown
               onChange={(e) => {
                 const currentSchedule = mondaySchedule;
-                currentSchedule.end = e.target.value;
+                currentSchedule.end = e;
                 setMondaySchedule(currentSchedule);
               }}
+              value={mondaySchedule.end}
               variant="outlined"
               className="min-w-[200px] "
               borderVariantClass="border border-crm-gray-170"
               optList={scheduleList}
             />
-            <Button onClick={() => setMondaySchedule({ start: "12:00 AM", end: "12:00 AM" })} variant="blue" paddingClassName="py-2 px-5">
+            <Button
+              onClick={() => {
+                console.log(mondaySchedule);
+              }}
+              variant="blue"
+              paddingClassName="py-2 px-5"
+            >
               Clear
             </Button>
           </div>

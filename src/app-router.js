@@ -13,8 +13,11 @@ const AccountEditPage = React.lazy(() => import("./pages/dashboard/account/edit"
 const TaskPage = React.lazy(() => import("./pages/dashboard/task"));
 const SchedulesPage = React.lazy(() => import("./pages/dashboard/schedules"));
 const CallsPage = React.lazy(() => import("./pages/dashboard/calls"));
+const SequencesPage = React.lazy(() => import("./pages/dashboard/sequences"));
+
 export default function AppRouter() {
-    return (<Suspense>
+  return (
+    <Suspense>
       <Routes>
         <Route path="/" caseSensitive element={<HomePage />}></Route>
         <Route path="sign-in" element={<SignInPage />}></Route>
@@ -22,17 +25,19 @@ export default function AppRouter() {
         <Route path="verification" element={<VerificationPage />}></Route>
         <Route path="invite" element={<InvitePage />}></Route>
         <Route path="dashboard" caseSensitive>
-          <Route index element={<DashboardPage />}/>
-          <Route path="settings" element={<SettingsPage />}/>
-          <Route path="task" element={<TaskPage />}/>
+          <Route index element={<DashboardPage />} />
+          <Route path="settings" element={<SettingsPage />} />
+          <Route path="task" element={<TaskPage />} />
           <Route path="account">
-            <Route index element={<AccountPage />}/>
-            <Route path="edit" element={<AccountEditPage />}/>
+            <Route index element={<AccountPage />} />
+            <Route path="edit" element={<AccountEditPage />} />
           </Route>
-          <Route path="calls" element={<CallsPage />}/>
-          <Route path="schedules" element={<SchedulesPage />}/>
+          <Route path="calls" element={<CallsPage />} />
+          <Route path="schedules" element={<SchedulesPage />} />
+          <Route path="sequences" element={<SequencesPage />} />
         </Route>
         <Route path="order-summary" caseSensitive element={<OrderSummaryPage />}></Route>
       </Routes>
-    </Suspense>);
+    </Suspense>
+  );
 }
