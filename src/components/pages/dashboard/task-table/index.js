@@ -2,40 +2,35 @@ import Button from "@src/components/common/Button";
 import Checkbox from "@src/components/common/Checkbox";
 import InputRadio from "@src/components/common/InputRadio";
 import useLocalData from "@src/utility/hooks/useLocalData";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 export default function DashboardTaskTable(props) {
   const { className, columns, rows, head, heading } = props;
   const [isCheckAll, setIsCheckAll] = useState(false);
-  const [isCheck, setIsCheck] = useState([]);
-  const [list, setList] = useState([]);
-  const { dispatch } = useLocalData();
+  const [datas, setDatas] = useState();
+
+  useEffect(() => {
+    const initRows = rows.map((r) => {
+      r.checked = false;
+      return r;
+    });
+
+    setDatas(initRows);
+  }, []);
+
   const handleSelectAll = (e) => {
-    setIsCheckAll(!isCheckAll);
-    setIsCheck(list.map((li) => li.id));
-    if (isCheckAll) {
-      setIsCheck([]);
-    }
-  };
-  const handleClick = (e) => {
-    const { id, checked } = e.target;
-    setIsCheck([...isCheck, id]);
-    if (!checked) {
-      setIsCheck(isCheck.filter((item) => item !== id));
-    }
+    const newDatas = datas.map((data) => {
+      data.checked = e.target.checked;
+      return data;
+    });
+    setIsCheckAll(e.target.checked);
+
+    setDatas(newDatas);
   };
 
-  const catalog = rows.map(({ id, name }) => {
-    return (
-      <>
-        <Checkbox key={id} name={name} id={id} onClick={handleClick} defaultChecked={isCheck.includes(id)} />
-        {name}
-      </>
-    );
-  });
   const TableHeadAdvanced = () => (
     <section className="flex justify-between w-full pt-4 gap-10 items-center">
       <div className="flex ml-2 whitespace-nowrap">
-        <Checkbox name="selectAll" id="selectAll" onClick={handleSelectAll} defaultChecked={isCheckAll} />
+        <Checkbox name="selectAll" id="selectAll" onChange={handleSelectAll} checked={isCheckAll} />
         <p className="text-white ml-4 w-[fit-content]">Upcoming Task</p>
       </div>
       <div className="flex items-center whitespace-nowrap">
@@ -82,30 +77,37 @@ export default function DashboardTaskTable(props) {
                 {c.field}
               </th>
             ))}
-
-            {/* <th scope="col" className="p-4">
-          <span className="sr-only">Edit</span>
-        </th> */}
           </tr>
         </thead>
         <tbody className="  dark:bg-gray-800 dark:divide-gray-700">
-          {rows.map((r) => (
-            <tr className="">
-              <td className="p-2 w-4">
-                <div className="flex items-center">
-                  <Checkbox onChange={(e) => (e.currentTarget.checked = true)} defaultChecked={isCheckAll} />
-                </div>
-              </td>
-              {r?.value?.map((val) => (
-                <td className="py-4 px-2 text-sm  font-medium text-white  dark:text-white">{val.value}</td>
-              ))}
-              {/* <td className="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+          {datas !== undefined &&
+            datas.map((r) => (
+              <tr className="">
+                <td className="p-2 w-4">
+                  <div className="flex items-center">
+                    <Checkbox
+                      onChange={(e) => {
+                        let currentData = r;
+                        currentData.checked = e.target.checked;
+
+                        const updatedData = [...datas, { ...currentData }];
+                        let result = updatedData.filter((val, index, self) => index === self.findIndex((t) => t.id === val.id));
+                        setDatas(result);
+                      }}
+                      checked={r.checked}
+                    />
+                  </div>
+                </td>
+                {r?.value?.map((val) => (
+                  <td className="py-4 px-2 text-sm  font-medium text-white  dark:text-white">{val.value}</td>
+                ))}
+                {/* <td className="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
               <a href="#" className="text-blue-600 dark:text-blue-500 hover:underline">
                 Edit
               </a>
             </td> */}
-            </tr>
-          ))}
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
