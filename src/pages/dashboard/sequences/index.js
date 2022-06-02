@@ -1,7 +1,11 @@
+import Button from "@src/components/common/Button";
+import { ReloadIcon } from "@src/components/common/Icon";
+
+import MiniInput from "@src/components/common/MiniInput";
+import { SearchIcon } from "@src/config/pathImage";
 import DashboardLayout from "@src/layout/dashboard-layout";
 import { useState } from "react";
-import FilterTab from "../../../components/common/FilterTab";
-import Switch from "../../../components/common/Switch";
+
 export default function Sequences() {
   const [activeTab, setActiveTab] = useState("overview");
   const sequencesTabButton = [
@@ -28,12 +32,19 @@ export default function Sequences() {
   ];
   return (
     <DashboardLayout>
-      <div className="bg-crm-dark-300 mt-5 py-10">
-        <div className="flex items-center w-full">
-          <Switch className="mx-5" />
-          <FilterTab tabButton={sequencesTabButton} className="gap-x-5 w-full" />
-        </div>
+      <div className="flex items-center w-full justify-between mt-5">
+        <MiniInput icon={SearchIcon} variant="crm-gray" className="max-w-[300px]" placeholder="Search Sequences" />
+
+        <section className="flex gap-x-2">
+          <button className="bg-crm-dark-300 p-3 rounded-md">
+            <ReloadIcon />
+          </button>
+          <Button variant="blue" className="whitespace-nowrap">
+            Create Sequences
+          </Button>
+        </section>
       </div>
+      <div className="bg-crm-dark-300 mt-5 py-10"></div>
     </DashboardLayout>
   );
 }

@@ -131,6 +131,176 @@ export default function DashboardTaskList() {
         },
       ],
     },
+    {
+      id: 3,
+      value: [
+        {
+          field: "image",
+          value: <ImageColumnTable />,
+        },
+        {
+          field: "name",
+          value: <NameColumnTable name="satria herman" position="Founder & CTO" />,
+        },
+        {
+          field: "task",
+          value: (
+            <TaskColumnTable
+              difficulty="normal"
+              content={formatService.truncate(
+                `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
+              <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
+                190
+              )}
+            />
+          ),
+        },
+        {
+          field: "initialName",
+          value: <InitialName fullName="Satria Herman" />,
+        },
+        {
+          field: "dueDate",
+          value: <DueDateColumn dueDate="2022-04-02" />,
+        },
+      ],
+    },
+    {
+      id: 4,
+      value: [
+        {
+          field: "image",
+          value: <ImageColumnTable />,
+        },
+        {
+          field: "name",
+          value: <NameColumnTable name="satria herman" position="Founder & CTO" />,
+        },
+        {
+          field: "task",
+          value: (
+            <TaskColumnTable
+              difficulty="normal"
+              content={formatService.truncate(
+                `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
+              <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
+                190
+              )}
+            />
+          ),
+        },
+        {
+          field: "initialName",
+          value: <InitialName fullName="Satria Herman" />,
+        },
+        {
+          field: "dueDate",
+          value: <DueDateColumn dueDate="2022-04-02" />,
+        },
+      ],
+    },
+    {
+      id: 5,
+      value: [
+        {
+          field: "image",
+          value: <ImageColumnTable />,
+        },
+        {
+          field: "name",
+          value: <NameColumnTable name="satria herman" position="Founder & CTO" />,
+        },
+        {
+          field: "task",
+          value: (
+            <TaskColumnTable
+              difficulty="normal"
+              content={formatService.truncate(
+                `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
+              <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
+                190
+              )}
+            />
+          ),
+        },
+        {
+          field: "initialName",
+          value: <InitialName fullName="Satria Herman" />,
+        },
+        {
+          field: "dueDate",
+          value: <DueDateColumn dueDate="2022-04-02" />,
+        },
+      ],
+    },
+    {
+      id: 6,
+      value: [
+        {
+          field: "image",
+          value: <ImageColumnTable />,
+        },
+        {
+          field: "name",
+          value: <NameColumnTable name="satria herman" position="Founder & CTO" />,
+        },
+        {
+          field: "task",
+          value: (
+            <TaskColumnTable
+              difficulty="normal"
+              content={formatService.truncate(
+                `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
+              <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
+                190
+              )}
+            />
+          ),
+        },
+        {
+          field: "initialName",
+          value: <InitialName fullName="Satria Herman" />,
+        },
+        {
+          field: "dueDate",
+          value: <DueDateColumn dueDate="2022-04-02" />,
+        },
+      ],
+    },
+    {
+      id: 7,
+      value: [
+        {
+          field: "image",
+          value: <ImageColumnTable />,
+        },
+        {
+          field: "name",
+          value: <NameColumnTable name="satria herman" position="Founder & CTO" />,
+        },
+        {
+          field: "task",
+          value: (
+            <TaskColumnTable
+              difficulty="normal"
+              content={formatService.truncate(
+                `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
+              <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
+                190
+              )}
+            />
+          ),
+        },
+        {
+          field: "initialName",
+          value: <InitialName fullName="Satria Herman" />,
+        },
+        {
+          field: "dueDate",
+          value: <DueDateColumn dueDate="2022-04-02" />,
+        },
+      ],
+    },
   ];
   const TaskHeading = () => {
     return (

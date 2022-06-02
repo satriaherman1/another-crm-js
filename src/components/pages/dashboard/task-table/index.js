@@ -3,10 +3,19 @@ import Checkbox from "@src/components/common/Checkbox";
 import InputRadio from "@src/components/common/InputRadio";
 import useLocalData from "@src/utility/hooks/useLocalData";
 import React, { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
+import { ArrowDownOutlinedIcon } from "../../../common/Icon";
+import "./styles.scss";
+
 export default function DashboardTaskTable(props) {
   const { className, columns, rows, head, heading } = props;
   const [isCheckAll, setIsCheckAll] = useState(false);
-  const [datas, setDatas] = useState();
+  const [datas, setDatas] = useState(rows);
+  const [pageCount, setPageCount] = useState(0);
+  // Here we use item offsets; we could also use page offsets
+  // following the API or data you're working with.
+  const [itemOffset, setItemOffset] = useState(0);
+  const itemsPerPage = 5;
 
   const { dispatch } = useLocalData();
 
@@ -27,6 +36,21 @@ export default function DashboardTaskTable(props) {
     setIsCheckAll(e.target.checked);
 
     setDatas(newDatas);
+  };
+
+  useEffect(() => {
+    // Fetch items from another resources.
+    const endOffset = itemOffset + itemsPerPage;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    setDatas(rows.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(rows.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage]);
+
+  // Invoke when user click to request another page.
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % rows.length;
+    setItemOffset(newOffset);
+    console.log(event.selected, itemsPerPage, rows.length);
   };
 
   const TableHeadAdvanced = () => (
@@ -62,18 +86,6 @@ export default function DashboardTaskTable(props) {
       <table className={`${className ?? ""}  min-w-full relative block  dark:divide-gray-700 `}>
         <thead className="bg-gray-100 dark:bg-gray-700">
           <tr>
-            {/* <th scope="col" className="p-4">
-          <div className="flex items-center">
-            <input
-              id="checkbox-all"
-              type="checkbox"
-              className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label htmlFor="checkbox-all" className="sr-only">
-              checkbox
-            </label>
-          </div>
-        </th> */}
             {columns.map((c) => (
               <th scope="col" className={`${!c.display && "hidden"} py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400`}>
                 {c.field}
@@ -81,7 +93,7 @@ export default function DashboardTaskTable(props) {
             ))}
           </tr>
         </thead>
-        <tbody className="  dark:bg-gray-800 dark:divide-gray-700">
+        <tbody className="  dark:divide-gray-700">
           {datas !== undefined &&
             datas.map((r) => (
               <tr className="">
@@ -103,15 +115,22 @@ export default function DashboardTaskTable(props) {
                 {r?.value?.map((val) => (
                   <td className="py-4 px-2 text-sm  font-medium text-white  dark:text-white">{val.value}</td>
                 ))}
-                {/* <td className="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
-              <a href="#" className="text-blue-600 dark:text-blue-500 hover:underline">
-                Edit
-              </a>
-            </td> */}
               </tr>
             ))}
         </tbody>
       </table>
+
+      <ReactPaginate
+        className="crm-react-paginate ml-auto mt-4 mb-2"
+        activeLinkClassName="active-paginate"
+        breakLabel="..."
+        nextLabel={<ArrowDownOutlinedIcon fill="#fff" className="transform rotate-[-90deg]" />}
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={5}
+        pageCount={pageCount}
+        previousLabel={<ArrowDownOutlinedIcon fill="#fff" className="transform rotate-90" />}
+        renderOnZeroPageCount={null}
+      />
     </div>
   );
 }

@@ -864,14 +864,14 @@ export function UserOutlined(props) {
         d="M10.0002 10C12.3013 10 14.1668 8.13452 14.1668 5.83333C14.1668 3.53214 12.3013 1.66666 10.0002 1.66666C7.69898 1.66666 5.8335 3.53214 5.8335 5.83333C5.8335 8.13452 7.69898 10 10.0002 10Z"
         stroke={fill ?? "white"}
         strokeWidth="1.5"
-        stroke-linecap="round"
+        strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M17.1585 18.3333C17.1585 15.1083 13.9501 12.5 10.0001 12.5C6.05013 12.5 2.8418 15.1083 2.8418 18.3333"
         stroke={fill ?? "white"}
         strokeWidth="1.5"
-        stroke-linecap="round"
+        strokeLinecap="round"
         strokeLinejoin="round"
       />
     </svg>
@@ -898,6 +898,7 @@ export function UserOutlinedIcon(props) {
     </svg>
   );
 }
+
 export function FilterRemoveOutlined(props) {
   const { className, fill, width, height } = props;
   return (
@@ -928,6 +929,22 @@ export function FilterRemoveOutlined(props) {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+}
+export function ReloadIcon(props) {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "24"} height={height ?? "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M14.8901 5.07999C14.0201 4.81999 13.0601 4.64999 12.0001 4.64999C7.21008 4.64999 3.33008 8.52999 3.33008 13.32C3.33008 18.12 7.21008 22 12.0001 22C16.7901 22 20.6701 18.12 20.6701 13.33C20.6701 11.55 20.1301 9.88999 19.2101 8.50999"
+        stroke={fill ?? "white"}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M16.1302 5.32L13.2402 2" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M16.1298 5.32001L12.7598 7.78001" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

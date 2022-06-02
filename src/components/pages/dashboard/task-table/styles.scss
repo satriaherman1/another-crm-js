@@ -1,0 +1,35 @@
+.crm-react-paginate {
+  display: flex;
+  align-items: center;
+  background-color: #23252e;
+  width: fit-content;
+  padding: 12px 20px;
+  border-radius: 10px;
+
+  li {
+    &:first-child {
+      margin-left: 0;
+      a {
+        padding: 0;
+      }
+    }
+
+    a {
+      padding: 5px 11px;
+      border-radius: 1000px;
+
+      &.active-paginate {
+        @apply bg-crm-primary;
+      }
+    }
+
+    margin-left: 8px;
+
+    &:last-child {
+      margin-left: 8px;
+      a {
+        padding: 0;
+      }
+    }
+  }
+}
