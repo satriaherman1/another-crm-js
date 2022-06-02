@@ -8,6 +8,8 @@ export default function DashboardTaskTable(props) {
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [datas, setDatas] = useState();
 
+  const { dispatch } = useLocalData();
+
   useEffect(() => {
     const initRows = rows.map((r) => {
       r.checked = false;
