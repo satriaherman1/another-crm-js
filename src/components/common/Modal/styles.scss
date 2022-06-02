@@ -1,7 +1,7 @@
 .modal-container {
   @apply fixed top-0 left-0 w-full h-full bg-crm-dark opacity-90;
 
-  z-index: 10;
+  z-index: 100;
   transition: 0.3s;
 }
 
@@ -10,11 +10,11 @@
 
   width: 90%;
 
-  z-index: 11;
+  z-index: 101;
   transition: 0.3s;
 
   & > * {
-    @apply max-h-[70vh] md:max-h-[80vh];
+    max-height: 80vh;
     overflow-y: scroll;
   }
 }
