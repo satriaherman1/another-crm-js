@@ -28,7 +28,7 @@ export default function MultiFilter(props) {
             <CloseIcon fill="white" width="14" height="14" />
           </button>
         </section>
-        <div className={`absolute min-w-[160px]  top-[100%] left-[-200%] ${!openFilter ? "hidden z-30" : "block z-0"}`}>
+        <div className={`absolute min-w-[160px]  top-[100%] md:left-[-200%] ${!openFilter ? "hidden z-30" : "block z-0"}`}>
           <div className="crm-check-all py-3 px-4 bg-crm-gray-300 flex items-center rounded-t-md w-full">
             <span className="mx-auto">Sort By</span>
           </div>
