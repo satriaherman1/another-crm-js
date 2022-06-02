@@ -45,7 +45,7 @@
     .bvxQGL {
       fill: white;
       &:disabled {
-        fill: rgb(118, 118, 118);
+        opacity: 0.4;
       }
     }
   }
