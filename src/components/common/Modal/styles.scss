@@ -14,7 +14,7 @@
   transition: 0.3s;
 
   & > * {
-    max-height: 80vh;
+    @apply max-h-[70vh] md:max-h-[80vh];
     overflow-y: scroll;
   }
 }
