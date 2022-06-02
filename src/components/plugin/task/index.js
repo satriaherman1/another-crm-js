@@ -41,7 +41,7 @@ export default function PluginTask() {
   } = useLocalData();
   return (
     <>
-      <div className={`task-plugin-modal ${pluginModal ? "right-[3vw]" : "right-[-155vw]"}`}>
+      <div className={`task-plugin-modal ${pluginModal ? "md:right-[3vw]  md:translate-x-0   right-[50%] transform translate-x-[50%]" : "right-[-155vw]"}`}>
         <section className="w-full flex justify-center items-center relative py-4 px-5 border-b border-crm-gray-300">
           <section className="flex items-center gap-x-2">
             <button className="flex items-center">
@@ -52,7 +52,14 @@ export default function PluginTask() {
               <ArrowDownOutlinedIcon className="transform rotate-270" fill="#fff" />
             </button>
           </section>
-          <button className="right-[20px] top-1/2 transform translate-y-[-50%] absolute">
+          <button
+            onClick={() =>
+              dispatch({
+                type: "HIDE_PLUGIN_MODAL",
+              })
+            }
+            className="right-[20px] top-1/2 transform translate-y-[-50%] absolute"
+          >
             <CloseIcon fill="#fff" />
           </button>
         </section>
@@ -99,7 +106,7 @@ export default function PluginTask() {
               type: "HIDE_PLUGIN_MODAL",
             })
           }
-          className="fixed top-0 w-[100vw] duration-300 h-[100vh] opacity-90 bg-crm-dark"
+          className="fixed top-0 w-[100vw] duration-300 h-[100vh] opacity-90 bg-crm-dark z-[100]"
         ></div>
       )}
     </>

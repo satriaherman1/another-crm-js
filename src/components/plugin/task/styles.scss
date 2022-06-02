@@ -1,5 +1,7 @@
 .task-plugin-modal {
-  @apply fixed text-white bg-crm-dark-300 duration-300 transform translate-y-[-50%] top-1/2 z-10 rounded-md;
+  @apply w-[95%] md:w-[fit-content] top-[53%] fixed text-white bg-crm-dark-300 duration-300 transform translate-y-[-50%] top-1/2 z-10 rounded-md;
+
+  z-index: 101;
   max-height: 90vh;
   overflow-y: scroll;
 }
