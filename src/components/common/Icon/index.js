@@ -932,6 +932,7 @@ export function FilterRemoveOutlined(props) {
     </svg>
   );
 }
+
 export function ReloadIcon(props) {
   const { className, fill, width, height } = props;
   return (
@@ -945,6 +946,21 @@ export function ReloadIcon(props) {
       />
       <path d="M16.1302 5.32L13.2402 2" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M16.1298 5.32001L12.7598 7.78001" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function WarningIcon(props) {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "24"} height={height ?? "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12 9V11M12 15H12.01M5.07183 19H18.9282C20.4678 19 21.4301 17.3333 20.6603 16L13.7321 4C12.9623 2.66667 11.0378 2.66667 10.268 4L3.33978 16C2.56998 17.3333 3.53223 19 5.07183 19Z"
+        stroke={fill ?? "#DC2626"}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }

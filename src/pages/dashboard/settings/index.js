@@ -4,6 +4,7 @@ import SettingsProperty from "@src/components/pages/dashboard/settings/property"
 import VoiceSettings from "@src/components/pages/dashboard/settings/voice-settings";
 import DashboardLayout from "@src/layout/dashboard-layout";
 import React, { useEffect, useState } from "react";
+
 export default function Settings() {
   const [activeFilterTab, setActiveFilterTab] = useState("property");
   const [settingsContent, setSettingsContent] = useState();

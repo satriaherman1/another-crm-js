@@ -1,7 +1,8 @@
 import Button from "@src/components/common/Button";
+import Confirm from "@src/components/common/Confirm";
 import CrmDatatable from "@src/components/common/Datatable";
 import FilterTabButton from "@src/components/common/FilterTabButton";
-import { EditIcon, EyeIcon, TrashIcon } from "@src/components/common/Icon";
+import { EditIcon, EyeIcon, TrashIcon, WarningIcon } from "@src/components/common/Icon";
 import Modal from "@src/components/common/Modal";
 import CreateProperty from "@src/components/pages/dashboard/settings/property/create";
 import { useState } from "react";
@@ -9,6 +10,7 @@ import { useState } from "react";
 export default function SettingsProperty() {
   const [activeFilterButton, setActiveFilterButton] = useState("all properties");
   const [showModalCreate, setShowModalCreate] = useState(false);
+  const [showConfirmDelete, setShowConfirmDelete] = useState(false);
   const filterList = [
     {
       key: "all properties",
@@ -92,7 +94,7 @@ export default function SettingsProperty() {
           <button>
             <EditIcon fill="#FACB22" />
           </button>
-          <button>
+          <button onClick={() => setShowConfirmDelete(true)}>
             <TrashIcon fill="#FA2256" />
           </button>
         </div>
@@ -124,6 +126,19 @@ export default function SettingsProperty() {
       <Modal visible={showModalCreate} onClose={() => setShowModalCreate(false)} title={`create property`}>
         <CreateProperty />
       </Modal>
+
+      <Confirm
+        title="Confirm Delete"
+        icon={
+          <div className="bg-crm-red-100 h-[fit-content] p-3 rounded-full bg">
+            <WarningIcon />
+          </div>
+        }
+        description="Are you sure you want to delete this account? All of your data will be permanently removed from our servers forever. This action cannot be undone."
+        visible={showConfirmDelete}
+        nextButtonContent="Delete"
+        onClose={() => setShowConfirmDelete(false)}
+      />
     </>
   );
 }

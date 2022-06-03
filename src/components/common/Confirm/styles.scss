@@ -1,0 +1,20 @@
+.modal-confirm-container {
+  @apply fixed top-0 left-0 w-full h-full bg-crm-dark opacity-90;
+
+  z-index: 100;
+  transition: 0.3s;
+}
+
+.modal-confirm-component {
+  @apply bg-crm-dark-300 max-w-[600px]  fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 py-7 px-8 rounded;
+
+  width: 90%;
+
+  z-index: 101;
+  transition: 0.3s;
+
+  & > * {
+    max-height: 80vh;
+    overflow-y: scroll;
+  }
+}
