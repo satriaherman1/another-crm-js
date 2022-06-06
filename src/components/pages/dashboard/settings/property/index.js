@@ -88,9 +88,9 @@ export default function SettingsProperty() {
       name: "Action ",
       selector: (row) => (
         <div className="flex gap-x-2">
-          <button>
+          {/* <button>
             <EyeIcon fill="#5D5FEF" />
-          </button>
+          </button> */}
           <button>
             <EditIcon fill="#FACB22" />
           </button>

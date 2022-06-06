@@ -1,0 +1,28 @@
+.crm-tooltip {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  .crm-tooltip-word {
+    @apply bg-crm-gray-350;
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    padding: 4px 6px;
+    border-radius: 5px;
+    z-index: 50;
+    white-space: nowrap;
+
+    &::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      z-index: -1;
+      transform: rotate(45deg) translateX(-80%);
+
+      @apply bg-crm-gray-350;
+    }
+  }
+}

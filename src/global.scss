@@ -49,5 +49,10 @@ select {
 }
 
 @tailwind base;
+
+img {
+  max-width: unset;
+}
+
 @tailwind components;
 @tailwind utilities;
