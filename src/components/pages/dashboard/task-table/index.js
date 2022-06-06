@@ -78,48 +78,49 @@ export default function DashboardTaskTable(props) {
     </section>
   );
   return (
-    <div className={` overflow-x-scroll  `}>
-      {head ?? <TableHeadAdvanced />}
+    <div>
+      <div className={` overflow-x-scroll  `}>
+        {head ?? <TableHeadAdvanced />}
 
-      <section className="flex my-4 border-b border-crm-gray-350">{heading}</section>
+        <section className="flex my-4 border-b border-crm-gray-350">{heading}</section>
 
-      <table className={`${className ?? ""}  min-w-full relative block  dark:divide-gray-700 `}>
-        <thead className="bg-gray-100 dark:bg-gray-700">
-          <tr>
-            {columns.map((c) => (
-              <th scope="col" className={`${!c.display && "hidden"} py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400`}>
-                {c.field}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className="  dark:divide-gray-700">
-          {datas !== undefined &&
-            datas.map((r) => (
-              <tr className="">
-                <td className="p-2 w-4">
-                  <div className="flex items-center">
-                    <Checkbox
-                      onChange={(e) => {
-                        let currentData = r;
-                        currentData.checked = e.target.checked;
+        <table className={`${className ?? ""}  min-w-full relative block  dark:divide-gray-700 `}>
+          <thead className="bg-gray-100 dark:bg-gray-700">
+            <tr>
+              {columns.map((c) => (
+                <th scope="col" className={`${!c.display && "hidden"} py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400`}>
+                  {c.field}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="  dark:divide-gray-700">
+            {datas !== undefined &&
+              datas.map((r) => (
+                <tr className="">
+                  <td className="p-2 w-4">
+                    <div className="flex items-center">
+                      <Checkbox
+                        onChange={(e) => {
+                          let currentData = r;
+                          currentData.checked = e.target.checked;
 
-                        const updatedData = [...datas, { ...currentData }];
-                        let result = updatedData.filter((val, index, self) => index === self.findIndex((t) => t.id === val.id));
-                        setDatas(result);
-                      }}
-                      checked={r.checked}
-                    />
-                  </div>
-                </td>
-                {r?.value?.map((val) => (
-                  <td className="py-4 px-2 text-sm  font-medium text-white  dark:text-white">{val.value}</td>
-                ))}
-              </tr>
-            ))}
-        </tbody>
-      </table>
-
+                          const updatedData = [...datas, { ...currentData }];
+                          let result = updatedData.filter((val, index, self) => index === self.findIndex((t) => t.id === val.id));
+                          setDatas(result);
+                        }}
+                        checked={r.checked}
+                      />
+                    </div>
+                  </td>
+                  {r?.value?.map((val) => (
+                    <td className="py-4 px-2 text-sm  font-medium text-white  dark:text-white">{val.value}</td>
+                  ))}
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
       <ReactPaginate
         className="crm-react-paginate ml-auto mt-4 mb-2"
         activeLinkClassName="active-paginate"
