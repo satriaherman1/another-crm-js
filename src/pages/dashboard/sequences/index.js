@@ -2,8 +2,6 @@ import Button from "@src/components/common/Button";
 import { ReloadIcon } from "@src/components/common/Icon";
 
 import MiniInput from "@src/components/common/MiniInput";
-import Switch from "@src/components/common/Switch";
-import Tooltip from "@src/components/common/Tooltip";
 import SequencesTable from "@src/components/pages/dashboard/sequences/table";
 import { SearchIcon } from "@src/config/pathImage";
 import DashboardLayout from "@src/layout/dashboard-layout";
@@ -81,7 +79,7 @@ export default function Sequences() {
 
   return (
     <DashboardLayout>
-      <div className="flex flex-col md:fle-row md:items-center w-full justify-between mt-5 gap-5">
+      <div className="flex flex-col md:flex-row md:items-center w-full justify-between mt-5 gap-5">
         <MiniInput icon={SearchIcon} variant="crm-gray" className="max-w-[300px]" placeholder="Search Sequences" />
 
         <section className="flex gap-x-2">

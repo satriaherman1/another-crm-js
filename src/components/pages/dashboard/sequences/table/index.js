@@ -5,7 +5,7 @@ import Tooltip from "@src/components/common/Tooltip";
 export default function SequencesTable(props) {
   const { data } = props;
   return (
-    <div className="overflow-x-scroll">
+    <div className="overflow-x-scroll md:overflow-x-visible">
       {data.map((d) => (
         <section className="flex items-center gap-x-16 justify-between py-6 ">
           <div className="flex min-w-[202px]">

@@ -14,6 +14,7 @@ const TaskPage = React.lazy(() => import("./pages/dashboard/task"));
 const SchedulesPage = React.lazy(() => import("./pages/dashboard/schedules"));
 const CallsPage = React.lazy(() => import("./pages/dashboard/calls"));
 const SequencesPage = React.lazy(() => import("./pages/dashboard/sequences"));
+const CreateSequencesPage = React.lazy(() => import("./pages/dashboard/sequences/create"));
 
 export default function AppRouter() {
   return (
@@ -34,7 +35,10 @@ export default function AppRouter() {
           </Route>
           <Route path="calls" element={<CallsPage />} />
           <Route path="schedules" element={<SchedulesPage />} />
-          <Route path="sequences" element={<SequencesPage />} />
+          <Route path="sequences">
+            <Route index element={<SequencesPage />} />
+            <Route path="create" element={<CreateSequencesPage />} />
+          </Route>
         </Route>
         <Route path="order-summary" caseSensitive element={<OrderSummaryPage />}></Route>
       </Routes>
