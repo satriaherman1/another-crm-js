@@ -29,6 +29,30 @@ export default function CreateSequences() {
       activeIndicator: activeTab,
     },
   ];
+
+  const TableInfo = (props) => {
+    return (
+      <section className={`flex text-white ${props.className ?? ""}`}>
+        <div className="flex items-center py-2 px-5 border-r border-crm-gray-300">
+          <h3 className=" text-[26px] font-semibold">0</h3>
+          <p className="ml-3 text-crm-gray-600">Steps</p>
+        </div>
+        <div className="flex items-center py-2 px-5 border-r border-crm-gray-300">
+          <h3 className="text-[26px] font-semibold">0</h3>
+          <p className="ml-3 text-crm-gray-600">Days</p>
+        </div>
+        <div className="flex items-center py-2 px-5 border-r border-crm-gray-300">
+          <h3 className="text-[26px] font-semibold">100%</h3>
+          <p className="ml-3 text-crm-gray-600">Automated</p>
+        </div>
+        <div className="flex items-center py-2 px-5 ">
+          <h3 className="text-[26px] font-semibold">0</h3>
+          <p className="ml-3 text-crm-gray-600"> Active</p>
+        </div>
+      </section>
+    );
+  };
+
   return (
     <DashboardLayout>
       <div className="bg-crm-dark-300 mt-5 py-10">
@@ -39,9 +63,11 @@ export default function CreateSequences() {
             <ReloadIcon />
           </button>
           <Button variant="blue" className="whitespace-nowrap">
-            Create Sequences
+            Add Step
           </Button>
         </div>
+
+        <TableInfo className="mt-7 pl-4" />
       </div>
     </DashboardLayout>
   );

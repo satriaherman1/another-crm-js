@@ -6,32 +6,11 @@ import SequencesTable from "@src/components/pages/dashboard/sequences/table";
 import { SearchIcon } from "@src/config/pathImage";
 import DashboardLayout from "@src/layout/dashboard-layout";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Sequences() {
   const [activeTab, setActiveTab] = useState("overview");
-  const sequencesTabButton = [
-    {
-      key: "overview",
-      onClick: () => setActiveTab("overview"),
-      activeIndicator: activeTab,
-    },
-    {
-      key: "insights",
-      onClick: () => setActiveTab("insights"),
-      activeIndicator: activeTab,
-    },
-    {
-      key: "settings",
-      onClick: () => setActiveTab("settings"),
-      activeIndicator: activeTab,
-    },
-    {
-      key: "prospects",
-      onClick: () => setActiveTab("prospects"),
-      activeIndicator: activeTab,
-    },
-  ];
-
+  const navigate = useNavigate();
   const sequencesData = [
     {
       name: "Meetings",
@@ -86,7 +65,7 @@ export default function Sequences() {
           <button className="bg-crm-dark-300 p-3 rounded-md">
             <ReloadIcon />
           </button>
-          <Button variant="blue" className="whitespace-nowrap">
+          <Button onClick={() => navigate("create")} variant="blue" className="whitespace-nowrap">
             Create Sequences
           </Button>
         </section>
