@@ -1,0 +1,7 @@
+.create-sequences-step {
+  button {
+    &.sequences-step-active-button {
+      @apply p-2 rounded-md bg-crm-primary;
+    }
+  }
+}

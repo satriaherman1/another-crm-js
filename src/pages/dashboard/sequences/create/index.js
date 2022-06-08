@@ -4,9 +4,12 @@ import Button from "@src/components/common/Button";
 import FilterTab from "@src/components/common/FilterTab";
 import Switch from "@src/components/common/Switch";
 import { ReloadIcon } from "@src/components/common/Icon";
+import Modal from "@src/components/common/Modal";
+import CreateSequenceStep from "@src/components/pages/dashboard/sequences/create-step";
 
 export default function CreateSequences() {
   const [activeTab, setActiveTab] = useState("overview");
+  const [showCreateStep, setShowCreateStep] = useState(false);
   const sequencesTabButton = [
     {
       key: "overview",
@@ -62,13 +65,17 @@ export default function CreateSequences() {
           <button className="bg-crm-gray-400 p-3 border border-crm-gray-300 mx-2 rounded-md">
             <ReloadIcon />
           </button>
-          <Button variant="blue" className="whitespace-nowrap">
+          <Button onClick={() => setShowCreateStep(true)} variant="blue" className="whitespace-nowrap">
             Add Step
           </Button>
         </div>
 
         <TableInfo className="mt-7 pl-4" />
       </div>
+
+      <Modal title="Add Step" visible={showCreateStep} onClose={() => setShowCreateStep(false)}>
+        <CreateSequenceStep closeModal={() => setShowCreateStep(false)} />
+      </Modal>
     </DashboardLayout>
   );
 }

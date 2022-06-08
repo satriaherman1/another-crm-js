@@ -28,6 +28,7 @@ module.exports = {
         "crm-green": "#30E0A1",
         "crm-green-300": "#05850c",
         "crm-green-800": "#2D493F",
+        "crm-green-200": "#A3FFC8",
         // "crm-yellow": "#FACB22",
         // "crm-red": "#EC3748",
       },
