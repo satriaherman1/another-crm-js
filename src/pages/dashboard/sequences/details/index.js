@@ -59,10 +59,10 @@ export default function DetailSequences() {
   return (
     <DashboardLayout>
       <div className="bg-crm-dark-300 mt-5 py-10">
-        <div className="flex flex-wrap  items-center w-full">
+        <div className="flex flex-wrap  items-center w-full px-3">
           <Switch className="mx-5 basis-[20%] md:basis-[unset]" />
           <FilterTab tabButton={sequencesTabButton} className="gap-x-5 md:w-[70%] basis-[505] order-last md:order-[2]" />
-          <button className="bg-crm-gray-400 p-3 border border-crm-gray-300 mx-2 rounded-md order-[2] md:order-3">
+          <button className="bg-crm-gray-400 p-3 border border-crm-gray-300 mx-2 rounded-md order-[2] md:order-3 md:ml-auto">
             <ReloadIcon />
           </button>
           <Button onClick={() => setShowCreateStep(true)} variant="blue" paddingClassName="p-3" className="whitespace-nowrap basis-[20%] md:basis-[unset] md:order-last ml-auto md:ml-0">
