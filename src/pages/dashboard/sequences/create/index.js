@@ -1,81 +1,73 @@
+import Button from "@src/components/common/Button";
+import Dropdown from "@src/components/common/Dropdown";
+import Input from "@src/components/common/Input";
+import MiniInput from "@src/components/common/MiniInput";
 import DashboardLayout from "@src/layout/dashboard-layout";
 import { useState } from "react";
-import Button from "@src/components/common/Button";
-import FilterTab from "@src/components/common/FilterTab";
-import Switch from "@src/components/common/Switch";
-import { ReloadIcon } from "@src/components/common/Icon";
-import Modal from "@src/components/common/Modal";
-import CreateSequenceStep from "@src/components/pages/dashboard/sequences/create-step";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateSequences() {
   const [activeTab, setActiveTab] = useState("overview");
-  const [showCreateStep, setShowCreateStep] = useState(false);
-  const sequencesTabButton = [
-    {
-      key: "overview",
-      onClick: () => setActiveTab("overview"),
-      activeIndicator: activeTab,
-    },
-    {
-      key: "insights",
-      onClick: () => setActiveTab("insights"),
-      activeIndicator: activeTab,
-    },
-    {
-      key: "settings",
-      onClick: () => setActiveTab("settings"),
-      activeIndicator: activeTab,
-    },
-    {
-      key: "prospects",
-      onClick: () => setActiveTab("prospects"),
-      activeIndicator: activeTab,
-    },
-  ];
-
-  const TableInfo = (props) => {
-    return (
-      <section className={`flex text-white ${props.className ?? ""}`}>
-        <div className="flex items-center py-2 px-5 border-r border-crm-gray-300">
-          <h3 className=" text-[26px] font-semibold">0</h3>
-          <p className="ml-3 text-crm-gray-600">Steps</p>
-        </div>
-        <div className="flex items-center py-2 px-5 border-r border-crm-gray-300">
-          <h3 className="text-[26px] font-semibold">0</h3>
-          <p className="ml-3 text-crm-gray-600">Days</p>
-        </div>
-        <div className="flex items-center py-2 px-5 border-r border-crm-gray-300">
-          <h3 className="text-[26px] font-semibold">100%</h3>
-          <p className="ml-3 text-crm-gray-600">Automated</p>
-        </div>
-        <div className="flex items-center py-2 px-5 ">
-          <h3 className="text-[26px] font-semibold">0</h3>
-          <p className="ml-3 text-crm-gray-600"> Active</p>
-        </div>
-      </section>
-    );
-  };
+  const navigate = useNavigate();
 
   return (
     <DashboardLayout>
-      <div className="bg-crm-dark-300 mt-5 py-10">
-        <div className="flex items-center w-full">
-          <Switch className="mx-5" />
-          <FilterTab tabButton={sequencesTabButton} className="gap-x-5 w-[70%]" />
-          <button className="bg-crm-gray-400 p-3 border border-crm-gray-300 mx-2 rounded-md">
-            <ReloadIcon />
-          </button>
-          <Button onClick={() => setShowCreateStep(true)} variant="blue" className="whitespace-nowrap">
-            Add Step
+      <div className="bg-crm-dark-300 mt-5 px-5 py-10 text-white">
+        <section className="flex justify-between pb-4">
+          <h3 className="text-[24px] font-semibold">Add Sequences</h3>
+          <Button variant="blue" paddingClassName="px-3 py-2">
+            Back
           </Button>
-        </div>
+        </section>
+        <section className="border-t border-crm-gray-300 py-4 flex flex-col gap-y-7">
+          <div>
+            <label htmlFor="name" className="text-crm-gray-500">
+              Name
+            </label>
+            <MiniInput className="block w-full mt-2" name="name" id="name" variant="crm-gray" isNoMaxWidth />
+          </div>
+          <div>
+            <label htmlFor="name" className="text-crm-gray-500">
+              Choose Schedule
+            </label>
+            <Dropdown
+              optList={[
+                {
+                  label: "Choose Schedule",
+                  value: "Chosee Schedule",
+                },
+              ]}
+              className="block w-full mt-2"
+              name="name"
+              id="name"
+              variant="outlined"
+              isNoMaxWidth
+            />
+          </div>
+          <div>
+            <label htmlFor="name" className="text-crm-gray-500">
+              Select Sharing Option
+            </label>
+            <Dropdown
+              optList={[
+                {
+                  label: "Choose whom to share with",
+                  value: "Choose whom to share with",
+                },
+              ]}
+              className="block w-full mt-2"
+              name="name"
+              id="name"
+              variant="outlined"
+              isNoMaxWidth
+            />
+          </div>
+        </section>
 
-        <TableInfo className="mt-7 pl-4" />
+        <Button onClick={() => navigate("/dashboard/sequences/detail")} variant="primary" className="ml-auto block">
+          Submit
+        </Button>
       </div>
-
-      <Modal title="Add Step" visible={showCreateStep} onClose={() => setShowCreateStep(false)}>
-        <CreateSequenceStep closeModal={() => setShowCreateStep(false)} />
-      </Modal>
     </DashboardLayout>
   );
 }

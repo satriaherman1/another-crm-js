@@ -14,6 +14,7 @@ const TaskPage = React.lazy(() => import("./pages/dashboard/task"));
 const SchedulesPage = React.lazy(() => import("./pages/dashboard/schedules"));
 const CallsPage = React.lazy(() => import("./pages/dashboard/calls"));
 const SequencesPage = React.lazy(() => import("./pages/dashboard/sequences"));
+const DetailSequencesPage = React.lazy(() => import("./pages/dashboard/sequences/details"));
 const CreateSequencesPage = React.lazy(() => import("./pages/dashboard/sequences/create"));
 
 export default function AppRouter() {
@@ -37,6 +38,7 @@ export default function AppRouter() {
           <Route path="schedules" element={<SchedulesPage />} />
           <Route path="sequences">
             <Route index element={<SequencesPage />} />
+            <Route path="detail" element={<DetailSequencesPage />} />
             <Route path="create" element={<CreateSequencesPage />} />
           </Route>
         </Route>
