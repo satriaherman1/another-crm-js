@@ -20,6 +20,12 @@
   .rdt_TableBody {
     .rdt_TableRow {
       color: white;
+      .rdt_TableCell {
+        overflow: visible;
+        div {
+          overflow: visible;
+        }
+      }
 
       .sc-hKMtZM {
         color: #757b8c;

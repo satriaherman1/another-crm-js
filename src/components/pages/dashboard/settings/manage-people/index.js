@@ -4,8 +4,27 @@ import { SearchIcon } from "@src/config/pathImage";
 import Button from "@src/components/common/Button";
 import CrmDatatable from "@src/components/common/Datatable";
 import { ArrowDownOutlinedIcon, SettingDottedIcon } from "@src/components/common/Icon";
-import { memo } from "react";
+import { memo, useState } from "react";
+import FormatService from "@src/utility/services/format.service";
 function SettingsManagePeople() {
+  const formatService = new FormatService();
+  const SettingButton = () => {
+    const [showListButton, setShowListButton] = useState(false);
+    return (
+      <div className="relative overflow-visible text-white">
+        <button className="mx-auto block ml-5" onClick={() => setShowListButton(true)}>
+          <SettingDottedIcon />
+        </button>
+
+        <ul className={`${!showListButton && "hidden"} cursor-pointer z-[6] bg-crm-gray-300 rounded-md text-[14px] top-[100%] left-1/2  transform -translate-y-1/2 -translate-x-1/2 absolute`}>
+          <li className="px-3 py-2 ">Edit</li>
+          <li className="px-3 py-2 border-t border-crm-gray-450 0">Delete</li>
+        </ul>
+
+        {showListButton && <div className={`fixed w-[100vw] h-[100vh] top-0 left-0 z-[5] `} onClick={() => setShowListButton(false)}></div>}
+      </div>
+    );
+  };
   const data = [
     {
       id: 1,
@@ -33,7 +52,7 @@ function SettingsManagePeople() {
     {
       id: 2,
       name: "Email",
-      selector: (row) => row.email,
+      selector: (row) => formatService.truncate(row.email, 12),
       sortable: true,
       reorder: true,
     },
@@ -58,11 +77,7 @@ function SettingsManagePeople() {
     {
       id: 5,
       name: "Settings",
-      selector: () => (
-        <button className="mx-auto block ml-5">
-          <SettingDottedIcon />
-        </button>
-      ),
+      selector: () => <SettingButton />,
       sortable: true,
       reorder: true,
     },
