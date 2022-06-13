@@ -16,9 +16,13 @@ function SettingsManagePeople() {
           <SettingDottedIcon />
         </button>
 
-        <ul className={`${!showListButton && "hidden"} cursor-pointer z-[6] bg-crm-gray-300 rounded-md text-[14px] top-[100%] left-1/2  transform -translate-y-1/2 -translate-x-1/2 absolute`}>
-          <li className="px-3 py-2 ">Edit</li>
-          <li className="px-3 py-2 border-t border-crm-gray-450 0">Delete</li>
+        <ul className={`${!showListButton && "hidden"} cursor-pointer z-[6] bg-crm-gray-300 rounded-md text-[14px] top-[30%] left-1/2  transform -translate-y-1/2 -translate-x-1/2 absolute`}>
+          <li className="px-3 py-2 " onClick={() => setShowListButton(false)}>
+            Edit
+          </li>
+          <li className="px-3 py-2 border-t border-crm-gray-450 0" onClick={() => setShowListButton(false)}>
+            Delete
+          </li>
         </ul>
 
         {showListButton && <div className={`fixed w-[100vw] h-[100vh] top-0 left-0 z-[5] `} onClick={() => setShowListButton(false)}></div>}
