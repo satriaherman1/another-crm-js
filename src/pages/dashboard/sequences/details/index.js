@@ -96,7 +96,9 @@ export default function DetailSequences() {
     <DashboardLayout>
       <div className="bg-crm-dark-300 mt-5 py-10">
         <div className="flex flex-wrap  items-center w-full px-3">
-          <Switch className="mx-5 basis-[20%] md:basis-[unset]" />
+          <div className="mx-5 basis-[20%] md:basis-[unset]">
+            <Switch />
+          </div>
           <FilterTab tabButton={sequencesTabButton} className="gap-x-5 md:w-[70%] basis-[505] order-last md:order-[2]" />
           <button className="bg-crm-gray-400 p-3 border border-crm-gray-300 mx-2 rounded-md order-[2] md:order-3 md:ml-auto">
             <ReloadIcon />
