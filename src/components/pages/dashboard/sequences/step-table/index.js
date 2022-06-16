@@ -42,7 +42,7 @@ export default function StepTable(props) {
                 </div>
               </div>
 
-              <div className="flex justify-between">
+              <div className="flex justify-between md:hidden">
                 <Switch className="md:hidden" />
                 <span className="ml-6 md:hidden ">{d.duration}</span>
               </div>
