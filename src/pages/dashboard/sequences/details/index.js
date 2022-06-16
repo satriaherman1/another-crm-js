@@ -106,7 +106,7 @@ export default function DetailSequences() {
           </Button>
         </div>
 
-        <TableInfo className="mt-7 pl-4" />
+        <TableInfo className="mt-7 pl-4 overflow-x-scroll" />
         <StepTable data={stepList} />
       </div>
 
