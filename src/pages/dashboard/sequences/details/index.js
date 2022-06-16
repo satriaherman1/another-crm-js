@@ -3,9 +3,10 @@ import { useState } from "react";
 import Button from "@src/components/common/Button";
 import FilterTab from "@src/components/common/FilterTab";
 import Switch from "@src/components/common/Switch";
-import { ReloadIcon } from "@src/components/common/Icon";
+import { CallIcon, MailIcon, MessageFilledIcon, MessageNotifIcon, ReloadIcon } from "@src/components/common/Icon";
 import Modal from "@src/components/common/Modal";
 import CreateSequenceStep from "@src/components/pages/dashboard/sequences/create-step";
+import StepTable from "@src/components/pages/dashboard/sequences/step-table";
 
 export default function DetailSequences() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -30,6 +31,41 @@ export default function DetailSequences() {
       key: "prospects",
       onClick: () => setActiveTab("prospects"),
       activeIndicator: activeTab,
+    },
+  ];
+
+  const stepList = [
+    {
+      icon: <MailIcon />,
+      name: "Auto Email - Day 1",
+      finish: true,
+      duration: "5 m",
+      thread: [
+        {
+          name: "new thread",
+          description: "Thank You for Reaching Out to QiistPay - Financial, Crypto, 1-Click, & More - Helllo, Thank you for raching out to",
+          delivered: 10,
+          opened: 60,
+          replied: 2.4,
+          finished: 20,
+        },
+      ],
+    },
+    {
+      icon: <CallIcon />,
+      name: "Auto Email - Day 1",
+      finish: true,
+      duration: "5 m",
+      thread: [
+        {
+          name: "new thread",
+          description: "Thank You for Reaching Out to QiistPay - Financial, Crypto, 1-Click, & More - Helllo, Thank you for raching out to",
+          delivered: 10,
+          opened: 60,
+          replied: 2.4,
+          finished: 20,
+        },
+      ],
     },
   ];
 
@@ -71,6 +107,7 @@ export default function DetailSequences() {
         </div>
 
         <TableInfo className="mt-7 pl-4" />
+        <StepTable data={stepList} />
       </div>
 
       <Modal title="Add Step" visible={showCreateStep} onClose={() => setShowCreateStep(false)}>

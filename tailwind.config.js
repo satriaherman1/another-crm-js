@@ -11,7 +11,6 @@ module.exports = {
         "crm-gray-420": "#2E2F35",
         "crm-gray-400": "#2C2E34",
         "crm-gray-370": "#4B4A4A",
-
         "crm-gray-350": "#404554",
         "crm-gray-320": "#3A3F4F",
         "crm-gray-300": "#3C4254",

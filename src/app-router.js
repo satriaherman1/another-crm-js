@@ -19,7 +19,7 @@ const CreateSequencesPage = React.lazy(() => import("./pages/dashboard/sequences
 
 export default function AppRouter() {
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" caseSensitive element={<HomePage />}></Route>
         <Route path="sign-in" element={<SignInPage />}></Route>

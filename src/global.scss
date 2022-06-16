@@ -54,5 +54,11 @@ img {
   max-width: unset;
 }
 
+.paragraph-truncate {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 @tailwind components;
 @tailwind utilities;
