@@ -92,6 +92,18 @@ export default function DetailSequences() {
     );
   };
 
+  const SequenceSection = () => {
+    switch (activeTab) {
+      case "overview":
+        return (
+          <>
+            <TableInfo className="mt-7 pl-4 overflow-x-scroll" />
+            <StepTable data={stepList} />{" "}
+          </>
+        );
+    }
+  };
+
   return (
     <DashboardLayout>
       <div className="bg-crm-dark-300 mt-5 py-10">
@@ -103,13 +115,12 @@ export default function DetailSequences() {
           <button className="bg-crm-gray-400 p-3 border border-crm-gray-300 mx-2 rounded-md order-[2] md:order-3 md:ml-auto">
             <ReloadIcon />
           </button>
-          <Button onClick={() => setShowCreateStep(true)} variant="blue" paddingClassName="p-3" className="whitespace-nowrap basis-[20%] md:basis-[unset] md:order-last ml-auto md:ml-0">
-            Add Step
+          <Button onClick={() => setShowCreateStep(true)} variant="blue" paddingClassName="p-3" className="whitespace-nowrap basis-[20%] md:basis-[unset] md:order-last ml-auto md:ml-0 capitalize">
+            Add {activeTab === "overview" ? "step" : activeTab}
           </Button>
         </div>
 
-        <TableInfo className="mt-7 pl-4 overflow-x-scroll" />
-        <StepTable data={stepList} />
+        <SequenceSection />
       </div>
 
       <Modal title="Add Step" visible={showCreateStep} onClose={() => setShowCreateStep(false)}>

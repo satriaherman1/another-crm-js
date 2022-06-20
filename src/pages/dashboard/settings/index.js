@@ -1,6 +1,7 @@
 import FilterTab from "@src/components/common/FilterTab";
 import SettingsManagePeople from "@src/components/pages/dashboard/settings/manage-people";
 import SettingsProperty from "@src/components/pages/dashboard/settings/property";
+import SettingSection from "@src/components/pages/dashboard/settings/settings-section";
 import VoiceSettings from "@src/components/pages/dashboard/settings/voice-settings";
 import DashboardLayout from "@src/layout/dashboard-layout";
 import React, { useEffect, useState } from "react";
@@ -45,6 +46,9 @@ export default function Settings() {
         break;
       case "voice settings":
         setSettingsContent(<VoiceSettings />);
+        break;
+      case "settings":
+        setSettingsContent(<SettingSection />);
         break;
     }
   }, [activeFilterTab]);
