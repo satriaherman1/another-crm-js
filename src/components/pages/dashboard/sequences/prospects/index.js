@@ -1,4 +1,7 @@
 import CrmDatatable from "@src/components/common/Datatable";
+import Dropdown from "@src/components/common/Dropdown";
+import MiniInput from "@src/components/common/MiniInput";
+import { SearchIcon } from "@src/config/pathImage";
 
 export default function SequenceProspects() {
   const data = [
@@ -141,6 +144,21 @@ export default function SequenceProspects() {
 
   return (
     <div className="p-3">
+      <section className="flex my-3 gap-3">
+        <div className="filter-box">View & Filters</div>
+        <Dropdown
+          variant="outlined"
+          borderVariantClass="border border-[#757b8c]"
+          optList={[
+            {
+              label: "test",
+              value: "test",
+            },
+          ]}
+          className="w-[80px] bg-crm-gray-200 text-white font-normal rounded-md border-crm-gray-350"
+        />
+        <MiniInput variant="crm-gray" className="max-w-[300px]" placeholder="Search Prospect" icon={SearchIcon} />
+      </section>
       <TableInfo />
       <CrmDatatable className="mt-2" columns={columns} data={data} selectableRows pagination />
     </div>

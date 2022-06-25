@@ -94,7 +94,7 @@ export default function Task() {
               content={formatService.truncate(
                 `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
               <span class="text-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
-                190
+                190,
               )}
             />
           ),
@@ -136,7 +136,7 @@ export default function Task() {
               content={formatService.truncate(
                 `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
               <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
-                190
+                190,
               )}
             />
           ),
@@ -178,7 +178,7 @@ export default function Task() {
               content={formatService.truncate(
                 `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
               <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
-                190
+                190,
               )}
             />
           ),
@@ -220,7 +220,7 @@ export default function Task() {
               content={formatService.truncate(
                 `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
               <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
-                190
+                190,
               )}
             />
           ),
@@ -262,7 +262,7 @@ export default function Task() {
               content={formatService.truncate(
                 `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
               <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
-                190
+                190,
               )}
             />
           ),
@@ -325,7 +325,7 @@ export default function Task() {
       <div className="py-4 px-6 bg-crm-dark-300 mt-3 flex flex-col lg:flex-row gap-7">
         <section>
           <div className="flex gap-x-4 items-center">
-            <button className="py-2 px-3 text-white font-normal rounded-md border border-crm-gray-350 ml-2 bg-crm-gray-200">View & Filters</button>
+            <button className="filter-box">View & Filters</button>
             <Dropdown
               variant="outlined"
               borderVariantClass="border border-[#757b8c]"
