@@ -138,29 +138,19 @@ export default function Dashboard() {
   const [isDateFilter, setIsDateFilter] = useState(false);
 
   useEffect(() => {
-    let typeFilterCount = typeFilter.filter((type) => type.checked === true).length;
     let typeFilterChild = typeFilter.map((type) => type.filterList.filter((tc) => tc.checked === true));
     let typeFilterChildCount = 0;
     typeFilterChild = typeFilterChild.map((tfc) => tfc.length);
     typeFilterChild.map((tfc) => {
       typeFilterChildCount += tfc;
     });
-    let personFilterCount = personFilter.filter((person) => person.checked === true).length;
+
     let personFilterChild = personFilter.filter((person) => person.filterList.filter((tc) => tc.checked === true));
     let personFilterChildCount = 0;
     personFilterChild = personFilterChild.map((tfc) => tfc.length);
-    // console.log(personFilterChild, personFilterChild);
     personFilterChild.map((tfc) => {
       personFilterChildCount += tfc;
     });
-
-    console.log(typeFilterCount + typeFilterChildCount + personFilterCount + personFilterChildCount);
-
-    if (typeFilterCount + typeFilterChildCount + personFilterCount + personFilterChildCount === 0) {
-      console.log("disabled");
-    } else {
-      console.log("enable");
-    }
   }, [typeFilter, personFilter]);
 
   return (

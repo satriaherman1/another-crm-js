@@ -7,6 +7,8 @@ import { CallIcon, MailIcon, MessageFilledIcon, MessageNotifIcon, ReloadIcon } f
 import Modal from "@src/components/common/Modal";
 import CreateSequenceStep from "@src/components/pages/dashboard/sequences/create-step";
 import StepTable from "@src/components/pages/dashboard/sequences/step-table";
+import SequenceSettings from "@src/components/pages/dashboard/sequences/settings";
+import SequenceProspects from "@src/components/pages/dashboard/sequences/prospects";
 
 export default function DetailSequences() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -101,6 +103,12 @@ export default function DetailSequences() {
             <StepTable data={stepList} />{" "}
           </>
         );
+
+      case "settings":
+        return <SequenceSettings />;
+
+      case "prospects":
+        return <SequenceProspects />;
     }
   };
 

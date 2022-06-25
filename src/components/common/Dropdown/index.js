@@ -23,7 +23,7 @@ export default function Dropdown(props) {
           name={name ?? ""}
           ref={selectRef}
           value={value}
-          className={`${dropdownVariantClass} ${borderVariantClass ?? "base-border"}  py-2 pl-3 pr-[30px]`}
+          className={`${dropdownVariantClass} ${borderVariantClass ?? "base-border"}  ${paddingClassName ?? "py-2 pl-3 pr-[30px]"}`}
         >
           {optList.map((opt) => (
             <option selected={value === opt.value} key={opt.value} value={opt.value}>
